@@ -1,0 +1,118 @@
+@media screen and (min-width: 768px) {
+  body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    color: #646464;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+
+  #root {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Container {
+    margin: 5vh 6vw 8vh 6vw;
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    max-width: 1268px;
+    max-height: 90%;
+  }
+
+  .content-container {
+    padding-right: 23px;
+  }
+
+  .is-absolute-bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .is-absolute-centered-desktop {
+    position: absolute;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+  }
+
+  .navbar-menu.portfolio-nav {
+    justify-content: space-around !important;
+  }
+  .profession {
+    text-align: right !important;
+  }
+  @media (prefers-color-scheme: dark) {
+
+    .Header {
+      background: url("../Images/header-background-dark.jpg") no-repeat center !important;
+    }
+  }
+
+  .is-active > p {
+    color: var(--second-color) !important;
+  }
+
+  @for $i from 1 through 4 {
+    #icon#{$i} {
+      width: 30px !important;
+    }
+  }
+  .is-mobile-only {
+    display: none;
+  }
+
+  .container-1 {
+    .my-info-column {
+      .my-info {
+        width: 80%;
+        margin: {
+          top: 45px;
+          left: auto;
+          right: auto;
+        }
+      }
+    }
+  }
+  .navbar-end a.navbar-item:hover{
+    background-color: transparent !important;
+  }
+  .navbar.desktop-theme-switcher{
+    background-color: transparent !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .circular--landscape {
+    display: inline-block;
+    position: relative;
+    margin-left: 22px;
+    width: 200px !important;
+    height: 200px !important;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .circular--landscape img {
+    width: auto;
+    height: 100%;
+  }
+  .my-info {
+    margin: {
+      top: 120px !important;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+body.dark-mode {
+  --body-background-color: linear-gradient(#212026, #212026, #212026);
+  --header-background: url("../Images/header-background-dark.jpg");
+  --profil-image: url("../images/profil-black.jpg");
+  --container1-body-background: #2B2B33;
+  --second-color: #FED700;
+  --black-text: #fff;
+  --submit-text: #000;
+  --side-background-color: #27282A;
+
+  .title.blue {
+    color: var(--second-color) !important;
+  }
+
+  .title {
+    color: var(--black-text) !important;;
+  }
+
+  .hover-content > .title {
+    color: black !important;
+  }
+
+  .has-text-black {
+    color: #C4C4C4 !important;
+  }
+
+  .tabs.is-toggle li.is-active a {
+    background-color: var(--second-color) !important;
+    color: var(--submit-text) !important;
+  }
+
+  i {
+    @media screen and (min-width: 768px) {
+      color: #FED700 !important;
+    }
+
+  }
+
+  .tabs.is-toggle a:hover {
+    color: #000 !important;
+  }
+
+  .button.is-light {
+    background-color: #27282A !important;
+
+    &:hover {
+      background-color: #f5f5f5 !important;;
+    }
+
+    &:hover > i {
+      color: black !important;
+    }
+  }
+
+
+  .column.profil-image {
+    .circle {
+      background: {
+        image: url("../images/profil-black.jpg") !important;
+      }
+    }
+  }
+
+  #root {
+    .Container {
+      .container-1 {
+        .Header {
+          background-image: url("../Images/header-background-dark.jpg") !important;
+          background-position: center !important;
+          background-size: cover !important;
+          background-repeat: no-repeat !important;
+          @media screen and (max-width: 767px) {
+            background-image: url("../Images/profil-black.jpg") !important;
+            background-position: center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+          }
+        }
+      }
+    }
+  }
+
+
+  .navbar.is-fixed-top {
+    background-color: #FED700 !important;
+  }
+
+}

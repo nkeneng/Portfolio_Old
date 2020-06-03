@@ -1,0 +1,153 @@
+@media screen and (max-width: 767px) {
+  body {
+    font-family: 'DM Serif Text', serif !important;
+    height: 100vh;
+    width: 100vw;
+
+    p {
+      font-size: 18px !important;
+    }
+
+    #root {
+      height: 100%;
+
+      .Container {
+        height: 100%;
+
+        .container-1 {
+          overflow: auto;
+          overflow-x: hidden;
+          flex-wrap: nowrap;
+          display: block;
+
+          .Header {
+            height: 100% !important;
+            width: 100vw;
+            background-image: url("../images/photo-profil.jpg")  !important;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            flex-grow: 2;
+            @media (prefers-color-scheme: dark) {
+              background-image: url("../images/profil-black.jpg")  !important;
+            }
+            .header-content {
+              height: 235px;
+            }
+          }
+
+          .page-content {
+            overflow-x: hidden !important;
+            overflow-y: hidden !important;
+            padding: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .is-absolute-centered-mobile {
+    position: absolute;
+    height: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+
+    .my-info {
+      width: 100% !important;
+      margin: {
+        top: 0 !important;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .column.social-network {
+    position: absolute !important;
+    bottom: 0;
+    width: 95% !important;
+  }
+
+  .column.header-nav {
+    flex-grow: 0.25;
+    padding: 0 !important;
+    height: 100px;
+  }
+
+  .black-mobile{
+    color: #4a4a4a !important;
+  }
+
+  .navbar-menu.is-active {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .navbar-menu, .navbar-item.is-active {
+    background-color: transparent !important;
+  }
+
+  .nav.navbar.portfolio-nav {
+    margin: 0 !important;
+    width: 100% !important;
+    z-index: 2 !important;
+    overflow-x: auto;
+  }
+
+  .column.portfolio {
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  .navbar-menu.portfolio-nav {
+    box-shadow: 0 8px 16px transparent !important;;
+    justify-content: space-between !important;
+  }
+
+  .hover-content {
+    z-index: 2;
+    visibility: visible;
+  }
+
+  .portfolio-image {
+    width: 100%;
+  }
+
+  .is-6-mobile {
+    margin: auto !important;
+  }
+  .is-mobile-only {
+    display: block !important;
+  }
+  .navbar.is-fixed-top{
+    @media (prefers-color-scheme: dark) {
+      background-color: #FED700 !important;
+    }
+  }
+  .navbar.is-fixed-top{
+    max-height: 75px !important;
+  }
+  i{
+    @media (prefers-color-scheme: dark) {
+      color: #4a4a4a !important; ;
+    }
+  }
+  .download-mobile{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navbar-dropdown{
+    z-index: 2;
+    background-color: #fff;
+  }
+  #language-switcher-mobile{
+    cursor: pointer;
+  }
+}
+

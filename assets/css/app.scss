@@ -1,0 +1,260 @@
+@import '~bulma';
+@import '~font-awesome';
+:root {
+  --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
+  --black-text: black;
+  --submit-text: #fff;
+  --second-color: #1877F2;
+  --header-background: url("../Images/header-background.jpg");
+  --container1-body-background: #DDDDDD;
+  --side-background-color: #fff;
+  --page-edges-border-radius: 25px;
+  --profil-image: url("../Images/photo-profil.jpg");
+}
+
+@import "helpers";
+@import "dark-theme";
+@import "desktop";
+@import "mobile";
+@import "slide";
+
+
+body {
+  * {
+    &::selection {
+      background-color: #ABCDEF;
+    }
+    .theme-switch {
+      cursor: pointer;
+    }
+  }
+
+  background-image: var(--body-background-color);
+
+  a, p, span, h4 {
+    color: var(--black-text);
+  }
+
+  a:hover {
+    color: #1877F2 !important;
+  }
+}
+
+/*container of all the page*/
+.container-1 {
+  height: 100%;
+  flex-direction: column;
+  /*header of the container-1 */
+  .Header {
+    border-radius: var(--page-edges-border-radius) var(--page-edges-border-radius) 0 0;
+    background: url("../Images/header-background.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .header-content {
+    margin-bottom: 0 !important;
+    width: 98.5%;
+  }
+
+  .column.profil-image {
+    position: relative;
+
+    .circle {
+      bottom: -3px;
+      position: absolute;
+      border-radius: 50%;
+      display: block;
+      max-height: 126%;
+      min-height: 130%;
+      width: 88%;
+      background: {
+        image: url(../Images/photo-profil.jpg);
+        position: center;
+        size: cover;
+      };
+    }
+  }
+
+
+}
+
+
+//end container-1
+
+.columns {
+  margin: 0;
+}
+
+.page-content {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  overflow-y: auto;
+  background-color: var(--container1-body-background);
+  flex-grow: 1.5;
+
+  .columns.is-mobile.hobby {
+    color: #1877F2;
+  }
+
+  .feedback {
+    width: 70%;
+  }
+
+  .tabs {
+    ul {
+      justify-content: center !important;
+    }
+
+    a {
+      color: var(--black-text);
+
+      &:hover {
+        color: var(--submit-text);
+      }
+    }
+  }
+}
+
+//end page content
+
+//right menu
+.right-navbar {
+  background-color: var(--side-background-color);
+  z-index: 2;
+  border-radius: 25px 25px 25px 0;
+  height: 60vh;
+  width: 97px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: -33px;
+  margin-right: -78px;
+
+  .columns.menu-right {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .column {
+      cursor: pointer;
+    }
+  }
+}
+
+//end right menu
+
+//portfolio item
+.portfolio-box {
+  .hover-content {
+    visibility: hidden;
+    width: 300px;
+    left: 12px !important;
+    top: 35% !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .hover-content {
+      visibility: visible;
+    }
+  }
+}
+
+//end portfolio item
+
+// submit button
+.button.send {
+  color: var(--submit-text);
+  background-color: var(--second-color);
+
+  &:hover {
+    color: var(--submit-text);
+    background-color: var(--second-color);
+    opacity: 0.80;
+  }
+}
+
+//end submit button
+
+.downloader {
+  padding-top: 5px;
+  height: 34px;
+  width: 215px;
+  background-color: var(--side-background-color);
+  position: absolute;
+  bottom: 1px;
+  right: 18px;
+  margin-bottom: -34px !important;
+  border-bottom-left-radius: 15px;
+}
+
+.theme-switcher-desktop {
+  width: 209px;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2
+}
+
+.title.blue {
+  height: 20px;
+  max-height: 50px;
+  //transform: translate(-30%,-30%);
+  color: var(--second-color) !important;
+}
+
+.theme-switcher-desktop {
+  font-size: 18px !important;
+}
+
+.tabs.is-toggle li.is-active a {
+  background-color: var(--second-color) !important;
+  color: var(--submit-text);
+}
+
+.button {
+  border-color: transparent !important;
+}
+
+@for $i from 1 through 5 {
+  #hobby-#{$i} {
+    width: 50px !important;
+  }
+}
+
+div[id^="portfolio-group-"]{
+  display: none !important;
+}
+
+div[id^="portfolio-group-"].is-active{
+  display: flex !important;
+}
+
+@import "light-mode";
+@import "dark-mode";
+
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  margin-top: 70px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+}
+.skills{
+  overflow-x: auto;
+}
