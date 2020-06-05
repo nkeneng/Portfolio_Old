@@ -94,6 +94,49 @@
   .navbar.desktop-theme-switcher{
     background-color: transparent !important;
   }
+
+  .page {
+    position: absolute;
+  }
+  .page-content{
+    position: relative;
+  }
+
+
+  .fade-exit > .page{
+    z-index: 0.5;
+  }
+
+  .fade-enter > .page{
+    z-index: 1;
+  }
+
+  .fade-enter.left > .page{
+    opacity: 1;
+    transform: translateX(100%)
+  }
+  .fade-exit.left > .page{
+    opacity: 0.5;
+    transform: translateX(0%)
+  }
+  .fade-enter.right > .page{
+    opacity: 1;
+    transform: translateX(100%)
+  }
+  .fade-exit.right > .page{
+    opacity: 0.5;
+    transform: translateX(0%)
+  }
+
+  .fade-enter.fade-enter-active > .page{
+    transform: translateX(0);
+    transition: all 1500ms ease-in-out;
+  }
+
+  .fade-exit.fade-exit-active > .page{
+    transform: translateX(100%);
+    transition: all 1500ms ease-in-out;
+  }
 }
 @media screen and (min-width: 1024px) {
   .circular--landscape {
