@@ -15,7 +15,7 @@ class Header extends Component {
         const {theme} = this.context;
         return (
             <div className="column Header">
-                <ThemeSwitcher/>
+                {/*<ThemeSwitcher/>*/}
                 <div className="columns header-content is-absolute-bottom is-multiline ">
                     <div
                         className="column social-network is-two-fifths is-two-fifths-tablet is-full-mobile is-relative">

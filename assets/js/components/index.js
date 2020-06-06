@@ -42,7 +42,7 @@ class Index extends Component {
                         <Header/>
                         <div className="column page-content">
                             <div className="columns content-container">
-                                <MobileNav/>
+                                {/*<MobileNav/>*/}
                                 <Route render={({location}) => (
                                     <TransitionGroup>
                                         <CSSTransition
