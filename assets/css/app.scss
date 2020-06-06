@@ -1,5 +1,6 @@
 @import '~bulma';
 @import '~font-awesome';
+
 :root {
   --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
   --black-text: black;
@@ -12,18 +13,12 @@
   --profil-image: url("../Images/photo-profil.jpg");
 }
 
-@import "helpers";
-@import "dark-theme";
-@import "desktop";
-@import "mobile";
-@import "slide";
-
-
 body {
   * {
     &::selection {
       background-color: #ABCDEF;
     }
+
     .theme-switch {
       cursor: pointer;
     }
@@ -229,17 +224,13 @@ body {
   }
 }
 
-div[id^="portfolio-group-"]{
+div[id^="portfolio-group-"] {
   display: none !important;
 }
 
-div[id^="portfolio-group-"].is-active{
+div[id^="portfolio-group-"].is-active {
   display: flex !important;
 }
-
-@import "light-mode";
-@import "dark-mode";
-
 
 .circular--landscape {
   display: inline-block;
@@ -255,10 +246,45 @@ div[id^="portfolio-group-"].is-active{
   width: auto;
   height: 100%;
 }
-.skills{
+
+.skills {
   overflow-x: auto;
 }
 
+select {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--black-text) !important;
+  font-size: 16px !important;
+}
 
+.select:not(.is-multiple):not(.is-loading)::after {
+  content: none !important;
+}
 
+.select.column {
+  padding: 0 !important;
+}
 
+.column.globe-icon {
+  margin-left: -40px !important;
+  padding-top: 7px !important;
+}
+
+i {
+  color: var(--second-color) !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    padding: 0 !important;
+  }
+}
+
+@import "helpers";
+@import "dark-theme";
+@import "desktop";
+@import "mobile";
+@import "slide";
+@import "light-mode";
+@import "dark-mode";

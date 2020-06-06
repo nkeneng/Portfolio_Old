@@ -23,14 +23,15 @@
           .Header {
             height: 100% !important;
             width: 100vw;
-            background-image: url("../images/photo-profil.jpg")  !important;
+            background-image: url("../images/photo-profil.jpg") !important;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             flex-grow: 2;
             @media (prefers-color-scheme: dark) {
-              background-image: url("../images/profil-black.jpg")  !important;
+              background-image: url("../images/profil-black.jpg") !important;
             }
+
             .header-content {
               height: 235px;
             }
@@ -78,7 +79,7 @@
     height: 100px;
   }
 
-  .black-mobile{
+  .black-mobile {
     color: #4a4a4a !important;
   }
 
@@ -124,30 +125,38 @@
   .is-mobile-only {
     display: block !important;
   }
-  .navbar.is-fixed-top{
+  .navbar.is-fixed-top {
     @media (prefers-color-scheme: dark) {
       background-color: #FED700 !important;
     }
   }
-  .navbar.is-fixed-top{
+  .navbar.is-fixed-top {
     max-height: 75px !important;
   }
-  i{
-    @media (prefers-color-scheme: dark) {
-      color: #4a4a4a !important; ;
-    }
-  }
-  .download-mobile{
+
+  .download-mobile {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
-  .navbar-dropdown{
+  .navbar-dropdown {
     z-index: 2;
     background-color: #fff;
   }
-  #language-switcher-mobile{
+  #language-switcher-mobile {
     cursor: pointer;
+  }
+
+  i {
+    color: #4a4a4a !important;;
+  }
+  select{
+    color: #4a4a4a !important;
+    margin: auto !important;
+    font-size: 16px !important;
+  }
+  .select select:not([multiple]){
+    padding-right: 0 ;
   }
 }
 

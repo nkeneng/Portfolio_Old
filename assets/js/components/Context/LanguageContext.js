@@ -2,21 +2,21 @@ import React, {createContext, Component} from "react";
 
 const LanguageContext = createContext();
 
-const languages = {
-    "English" : 'en',
-    "Deutsch" : 'de',
-    "Francais" :'fr'
+export const languages = {
+    'en': "English",
+    "de": 'Deutsch',
+    "fr": 'Francais'
 };
 
 export default LanguageContext
 
 class LanguageProvider extends Component {
     state = {
-        language: languages['English']
+        language: languages['fr']
     };
 
-    setLanguage = (term) => {
-        this.setState({language: languages[term]});
+    setLanguage = (key) => {
+        this.setState({language: languages[key]});
     };
 
     render() {

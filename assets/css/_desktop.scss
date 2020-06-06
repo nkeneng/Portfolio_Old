@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px ) {
   body {
     overflow: hidden;
     width: 100vw;
@@ -137,8 +137,9 @@
     transform: translateX(100%);
     transition: all 1500ms ease-in-out;
   }
+
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px ) {
   .circular--landscape {
     display: inline-block;
     position: relative;

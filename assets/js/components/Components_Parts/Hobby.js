@@ -14,11 +14,19 @@ import * as React from 'react';
 import {useContext} from "react";
 import ThemeContext from "../Context/ThemeContext";
 
-export function Hobby() {
+const title = {
+    'English': "Hobbies",
+    "Deutsch": 'Hobbys',
+    "Francais": 'Hobbies'
+};
+
+
+export function Hobby({lang}) {
     const {theme} = useContext(ThemeContext);
+    const {language} = lang;
     return (
         <div id="2" className="content">
-            <h2 className="title"> Hobbys </h2>
+            <h2 className="title"> {title[language]} </h2>
             <div className="columns is-mobile hobby is-multiline">
                 <div className="column is-6-mobile ">
                     <p className="has-text-centered">Gaming</p>

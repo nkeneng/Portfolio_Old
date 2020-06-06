@@ -29,13 +29,6 @@ body.dark-mode {
     color: var(--submit-text) !important;
   }
 
-  i {
-    @media screen and (min-width: 768px) {
-      color: #FED700 !important;
-    }
-
-  }
-
   .tabs.is-toggle a:hover {
     color: #000 !important;
   }
@@ -51,7 +44,6 @@ body.dark-mode {
       color: black !important;
     }
   }
-
 
   .column.profil-image {
     .circle {
@@ -79,10 +71,7 @@ body.dark-mode {
       }
     }
   }
-
-
   .navbar.is-fixed-top {
     background-color: #FED700 !important;
   }
-
 }

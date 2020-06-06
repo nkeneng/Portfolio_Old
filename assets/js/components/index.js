@@ -10,7 +10,6 @@ import Career from "./Career";
 import Portfolio from "./Portfolio";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import ThemeContext from './Context/ThemeContext';
-import {DropdownProvider} from './Context/DropdownContext';
 
 
 class Index extends Component {
@@ -37,41 +36,41 @@ class Index extends Component {
             <section className="Container is-relative">
                 <RightNav/>
                 <Downloader/>
-                <DropdownProvider>
-                    <div className="columns is-mobile container-1 is-multiline ">
-                        <Header/>
-                        <div className="column page-content">
-                            <div className="columns content-container">
-                                {/*<MobileNav/>*/}
-                                <Route render={({location}) => (
-                                    <TransitionGroup>
-                                        <CSSTransition
-                                            key={currentKey}
-                                            timeout={timeout}
-                                            classNames="fade"
-                                            mountOnEnter={true}
-                                            UnmountOnExit={false}
-                                        >
-                                            <div
-                                                className={this.getDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"}>
-                                                <Switch location={location}>
-                                                    <Route exact path="/"
-                                                           component={Home}/>
-                                                    <Route path="/contact"
-                                                           component={Contact}/>
-                                                    <Route path="/career"
-                                                           component={Career}/>
-                                                    <Route path="/portfolio"
-                                                           component={Portfolio}/>
-                                                </Switch>
-                                            </div>
-                                        </CSSTransition>
-                                    </TransitionGroup>
-                                )}/>
-                            </div>
+                <div className="columns is-mobile container-1 is-multiline ">
+                    <Header/>
+                    <div className="column page-content">
+                        <div className="columns content-container">
+                            <MobileNav/>
+                            <Route render={({location}) => (
+                                <TransitionGroup>
+                                    <CSSTransition
+                                        key={currentKey}
+                                        timeout={timeout}
+                                        classNames="fade"
+                                        mountOnEnter={true}
+                                        UnmountOnExit={false}
+                                    >
+                                        <div
+                                            className={this.getDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"}>
+                                            <Switch location={location}>
+                                                <Route exact path="/"
+                                                       component={Home}/>
+                                                <Route exact path="/about"
+                                                       component={Home}/>
+                                                <Route path="/contact"
+                                                       component={Contact}/>
+                                                <Route path="/career"
+                                                       component={Career}/>
+                                                <Route path="/portfolio"
+                                                       component={Portfolio}/>
+                                            </Switch>
+                                        </div>
+                                    </CSSTransition>
+                                </TransitionGroup>
+                            )}/>
                         </div>
                     </div>
-                </DropdownProvider>
+                </div>
             </section>
         )
     }

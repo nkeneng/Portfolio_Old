@@ -30,13 +30,6 @@ body.light-mode {
     color: var(--submit-text) !important;
   }
 
-  i {
-    @media screen and (min-width: 768px) {
-      color: #27282A !important;
-    }
-
-  }
-
   .tabs.is-toggle a:hover {
     color: #000 !important;
   }
@@ -80,8 +73,6 @@ body.light-mode {
       }
     }
   }
-
-
   .navbar.is-fixed-top {
     background-color: #ffffff !important;
   }
