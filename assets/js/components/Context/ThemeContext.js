@@ -1,9 +1,26 @@
-import React from "react";
+import React, {createContext, Component} from "react";
 
-export const themes = {
-    light: 'light-mode',
-    dark: 'dark-mode'
-};
-export const ThemeContext = (window.matchMedia('(prefers-color-scheme: dark)').matches) ? React.createContext(themes.dark): React.createContext(themes.light)
+const ThemeContext = createContext();
 
+export default ThemeContext
 
+class ThemeProvider extends Component {
+    state = {
+        theme: window.matchMedia('(prefers-color-scheme: dark)').matches
+    };
+
+    setTheme = () => {
+        this.setState({theme: !this.state.theme});
+    };
+
+    render() {
+        const {children} = this.props;
+        return (
+            <ThemeContext.Provider value={{...this.state, setTheme: this.setTheme}}>
+                {children}
+            </ThemeContext.Provider>
+        );
+    }
+}
+
+export {ThemeProvider};

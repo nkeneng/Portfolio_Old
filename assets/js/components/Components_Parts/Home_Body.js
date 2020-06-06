@@ -1,5 +1,6 @@
 import * as React from 'react';
 import MobileNav from './Mobile_Nav'
+import {Hobby} from "./Hobby";
 
 export default function HomeBody() {
     return (
@@ -99,36 +100,7 @@ export default function HomeBody() {
                     </div>
                 </div>
             </div>
-            <div id="2" className="content">
-                <h2 className="title"> Hobbys </h2>
-                <div className="columns is-mobile hobby is-multiline">
-                    <div className="column is-6-mobile ">
-                        <p className="has-text-centered">Gaming</p>
-                        <img id="hobby-1" className="is-block m-auto"
-                             alt=""/>
-                    </div>
-                    <div className="column is-6-mobile ">
-                        <p className="has-text-centered">Movies</p>
-                        <img id="hobby-2" className="is-block m-auto"
-                             alt=""/>
-                    </div>
-                    <div className="column is-6-mobile ">
-                        <p className="has-text-centered">Music</p>
-                        <img id="hobby-3" className="is-block m-auto"
-                             alt=""/>
-                    </div>
-                    <div className="column is-6-mobile ">
-                        <p className="has-text-centered">Coding</p>
-                        <img id="hobby-4" className="is-block m-auto"
-                             alt=""/>
-                    </div>
-                    <div className="column is-6-mobile ">
-                        <p className="has-text-centered">Sport</p>
-                        <img id="hobby-5" className="is-block m-auto"
-                             alt=""/>
-                    </div>
-                </div>
-            </div>
+            <Hobby/>
         </div>
     );
 };

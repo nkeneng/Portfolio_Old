@@ -7,6 +7,7 @@ const sentences = [
     "bachelor student"
 ];
 
+
 let part = 0;
 let part_index = 0;
 let interval_instance;
@@ -14,7 +15,6 @@ let elmt = document.querySelector('#change');
 
 /**
  * delete the text if all written
- * @constructor
  */
 function Delete() {
     var text = sentences[part].substring(0, part_index - 1);
@@ -52,5 +52,4 @@ function write() {
     }
 }
 
-   interval_instance = setInterval(write, 250);
-
+interval_instance = setInterval(write, 250);
