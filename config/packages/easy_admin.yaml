@@ -4,3 +4,4 @@ easy_admin:
         - App\Entity\Portfolio
         - App\Entity\Category
         - App\Entity\Messages
+        - App\Entity\FeedBack

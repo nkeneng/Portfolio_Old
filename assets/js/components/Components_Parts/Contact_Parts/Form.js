@@ -93,8 +93,7 @@ class Form extends Component {
             <div className="column is-6 has-text-left">
                 <div className={"notification " + display}>
                     <button onClick={this.resetAll} className="delete"/>
-                    Primar lorem adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus
-                    mi</strong>
+                    Your message has been send successfully <strong>I will answer you as soon as possible</strong>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
@@ -102,7 +101,7 @@ class Form extends Component {
                             <input required
                                    className={"input is-medium " + (nameIsValid !== undefined ? (!nameIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="text"
-                                   placeholder="Name"
+                                   placeholder="Your name"
                                    value={name}
                                    onChange={this.handleNameChange}
                             />
@@ -112,9 +111,9 @@ class Form extends Component {
                             <span className="icon is-small is-right">
                             <i className={"fa " + (nameIsValid !== undefined ? (!nameIsValid ? 'fa-exclamation-triangle' : 'fa-check') : '')}/>
                             </span>
-                            <p className={"help " + (!nameIsValid && nameIsValid !== undefined ? '' : 'is-hidden')}>This
-                                username
-                                is available</p>
+                            <p className={"help " + (!nameIsValid && nameIsValid !== undefined ? '' : 'is-hidden')}>
+                                The name is still not long enough
+                            </p>
                         </p>
                     </div>
                     <div className="field">
@@ -122,7 +121,7 @@ class Form extends Component {
                             <input required
                                    className={"input is-medium " + (emailIsValid !== undefined ? (!emailIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="email"
-                                   placeholder="Email"
+                                   placeholder="Your email"
                                    value={email}
                                    onChange={this.handleEmailChange}
                             />
@@ -132,9 +131,9 @@ class Form extends Component {
                             <span className="icon is-small is-right">
                             <i className={"fa " + (emailIsValid !== undefined ? (!emailIsValid ? 'fa-exclamation-triangle' : 'fa-check') : '')}/>
                             </span>
-                            <p className={"help " + (!emailIsValid && emailIsValid !== undefined ? '' : 'is-hidden')}>This
-                                username
-                                is available</p>
+                            <p className={"help " + (!emailIsValid && emailIsValid !== undefined ? '' : 'is-hidden')}>
+                                Your email doesn't respect the email convention
+                            </p>
                         </p>
                     </div>
                     <div className="field">
@@ -146,9 +145,9 @@ class Form extends Component {
                                   onChange={this.handleMessageChange}
                         />
                         </div>
-                        <p className={"help " + (!messageIsValid && messageIsValid !== undefined ? '' : 'is-hidden')}>This
-                            username
-                            is available</p>
+                        <p className={"help " + (!messageIsValid && messageIsValid !== undefined ? '' : 'is-hidden')}>
+                            Your message is still not long enough
+                        </p>
                     </div>
                     <div className="field">
                         <div className="control">
