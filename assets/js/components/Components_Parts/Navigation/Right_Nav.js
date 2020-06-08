@@ -1,11 +1,8 @@
 import * as React from 'react';
-import {useContext} from "react";
-import ThemeContext from "../Context/ThemeContext";
-import NavLinks from "./Navigation/NavLinks";
+import NavLinks from "./NavLinks";
+import {dest} from "./Nav_Utilities";
 
-const dest = ['About', 'Career', 'Portfolio', 'Contact'];
 export default function RightNav() {
-    const {theme} = useContext(ThemeContext);
     const NavElements = dest.map((item, key) => (
         <NavLinks key={key} dest={item} active={true} id={key + 1}/>
     ));

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Header from './Components_Parts/Header';
-import RightNav from './Components_Parts/Right_Nav';
+import RightNav from './Components_Parts/Navigation/Right_Nav';
 import Downloader from './Components_Parts/Downloader';
 import {Route, Switch} from "react-router-dom";
 import Contact from "./Contact";
 import Home from "./Home";
-import MobileNav from "./Components_Parts/Mobile_Nav";
+import MobileNav from "./Components_Parts/Navigation/Mobile_Nav";
 import Career from "./Career";
 import Portfolio from "./Portfolio";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';

@@ -1,20 +1,18 @@
 import * as React from 'react';
 import {NavLink} from "react-router-dom";
-import {RenderImage} from "./Render_Image";
 import {useContext} from "react";
 import LanguageContext from "../../Context/LanguageContext";
 import {NavLabels} from "./Nav_Utilities";
+import {RenderImage} from "./Render_Image";
 
 
-export default function NavLinks({dest, active, id}) {
+export default function NavLinksMobile({dest, active, id}) {
     const {language} = useContext(LanguageContext);
     const destination = '/' + dest.toLowerCase();
     return (
-        <NavLink activeClassName={active ? 'active' : ''} exact to={destination}>
-            <div className="column">
-                <RenderImage id={id} isMobile={false}/>
-                <p>{NavLabels[id-1][language]}</p>
-            </div>
+        <NavLink className="navbar-item" exact to={destination}>
+            <RenderImage id={id} isMobile={true}/>
+            <span className="black-mobile">{NavLabels[id - 1][language]}</span>
         </NavLink>
     );
 }
