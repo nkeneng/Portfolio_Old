@@ -17,7 +17,7 @@ class Feedback extends Component {
     render() {
         const {feedback} = this.state;
         const feedBackElements = feedback.map((feedback, key) => (
-            <div id={"slide"+key+1} className="m-auto feedback ">
+            <div key={key} id={"slide"+key+1} className="m-auto feedback ">
                 <p className="has-text-centered">
                     {feedback.content}
                 </p>
