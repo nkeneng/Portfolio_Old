@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=FeedBackRepository::class)
+ * @ORM\Table(name="steven_portfolio_feedback")
  */
 class FeedBack
 {

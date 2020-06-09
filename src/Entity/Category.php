@@ -10,6 +10,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ *  @ORM\Table(name="steven_portfolio_category")
  */
 class Category
 {
