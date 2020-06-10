@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
-import Career_Body from './Components_Parts/Career_Body';
+import Experience from "./Components_Parts/Career_Parts/experience";
+import {Education} from "./Components_Parts/Career_Parts/education";
+import {Languages} from "./Components_Parts/Career_Parts/languages";
+import {Skills} from "./Components_Parts/Career_Parts/skills";
 
 
 class Career extends Component {
     render() {
         return (
-            <Career_Body/>
+            <div className="page is-12 column mt-4">
+                <Experience/>
+                <Education/>
+                <Languages/>
+                <Skills/>
+            </div>
         )
     }
 }

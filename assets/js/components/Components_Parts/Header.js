@@ -58,7 +58,7 @@ class Header extends Component {
                             </div>
                             <div
                                 className="button mt-14 download-mobile send  is-mobile-only is-medium">Download
-                                Cv
+                                CV
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,54 @@
+{% block _feedback_content_widget %}
+    {% set content = value %}
+    <label for="de_feedback_content">German version</label>
+    <textarea id="de_feedback_content"
+              name="de_feedback_content" class="form-control" type="text"
+              placeholder="Geben Sie der content hier">{{ (content is not empty) ? content['de'] is not empty ? content['de']|nl2br : '' }} </textarea>
+    <br>
+    <label for="en_feedback_content">English version</label>
+    <textarea name="en_feedback_content"
+              id="en_feedback_content" class="form-control" type="text"
+              placeholder="Insert your content here ">{{ (content is not empty) ? content['en'] is not empty ? content['en']|nl2br : '' }} </textarea>
+    <br>
+    <label for="fr_feedback_content">French version</label>
+    <textarea name="fr_feedback_content"
+              id="fr_feedback_content" class="form-control" type="text"
+              placeholder="Entrez le titre">{{ (content is not empty) ? content['fr'] is not empty ? content['fr']|nl2br : '' }} </textarea>
+
+{% endblock %}
+
+{% block _services_content_widget %}
+    {% set content = value %}
+    <label for="de_services[content]">German version</label>
+    <textarea id="de_services[content]"
+              name="de_services[content]" class="form-control" type="text"
+              placeholder="Geben Sie der content hier">{{ (content is not empty) ? content['de'] is not empty ? content['de']|nl2br : '' }} </textarea>
+    <br>
+    <label for="en_services[content]">English version</label>
+    <textarea name="en_services[content]"
+              id="en_services[content]" class="form-control" type="text"
+              placeholder="Insert your content here ">{{ (content is not empty) ? content['en'] is not empty ? content['en']|nl2br : '' }} </textarea>
+    <br>
+    <label for="fr_services[content]">French version</label>
+    <textarea name="fr_services[content]"
+              id="fr_services[content]" class="form-control" type="text"
+              placeholder="Entrez le titre">{{ (content is not empty) ? content['fr'] is not empty ? content['fr']|nl2br : '' }} </textarea>
+{% endblock %}
+
+{% block _services_title_widget %}
+    {% set title = value %}
+    <label for="de_services[title]">German version</label>
+    <textarea id="de_services[title]"
+              name="de_services[title]" class="form-control" type="text"
+              placeholder="Geben Sie der title hier">{{ (title is not empty) ? title['de'] is not empty ? title['de']|nl2br : '' }} </textarea>
+    <br>
+    <label for="en_services[title]">English version</label>
+    <textarea name="en_services[title]"
+              id="en_services[title]" class="form-control" type="text"
+              placeholder="Insert your title here ">{{ (title is not empty) ? title['en'] is not empty ? title['en']|nl2br : '' }} </textarea>
+    <br>
+    <label for="fr_services[title]">French version</label>
+    <textarea name="fr_services[title]"
+              id="fr_services[title]" class="form-control" type="text"
+              placeholder="Entrez le titre">{{ (title is not empty) ? title['fr'] is not empty ? title['fr']|nl2br : '' }} </textarea>
+{% endblock %}

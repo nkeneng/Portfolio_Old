@@ -1,0 +1,20 @@
+easy_admin:
+  entities:
+    Category:
+      class: App\Entity\Category
+      label: 'Category'
+      list:
+        title: 'List of all Category'
+        help: 'list of Category'
+        actions:
+          - { name: 'edit', label: '', icon: 'edit' }
+          - { name: 'delete', label: '', icon: 'trash' }
+        fields:
+          - {property: 'id'}
+          - {property: 'title'}
+      edit:
+        fields:
+          - {property: 'title'}
+      new:
+        fields:
+          - {property: 'title'}

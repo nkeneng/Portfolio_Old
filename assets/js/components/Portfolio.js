@@ -21,6 +21,7 @@ export default class Portfolio extends React.Component {
     async componentDidMount() {
         const portfolios = await FetchPortfolio('portfolios');
         this.setState({portfolios});
+
         const categories = await FetchPortfolio('categories');
         this.setState({categories});
         this.setCategoryPortfolio()

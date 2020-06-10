@@ -3,7 +3,7 @@ import {AboutMe} from "./Components_Parts/Home_Components/About_Me";
 import {Hobby} from "./Components_Parts/Hobby";
 import LanguageContext from "./Context/LanguageContext";
 import Feedback from "./Components_Parts/Home_Components/Feedback";
-import {Services} from "./Components_Parts/Home_Components/Services";
+import Services from "./Components_Parts/Home_Components/Services";
 
 class Home extends Component {
     static contextType = LanguageContext;

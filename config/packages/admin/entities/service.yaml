@@ -1,0 +1,25 @@
+easy_admin:
+  entities:
+    Services:
+      class: App\Entity\Services
+      label: 'Services'
+      list:
+        title: 'List of all Services'
+        help: 'list of Services'
+        actions:
+          - { name: 'edit', label: '', icon: 'edit' }
+          - { name: 'delete', label: '', icon: 'trash' }
+        fields:
+          - {property: 'id'}
+          - {property: 'title'}
+          - {property: 'content'}
+        templates:
+          field_json: 'easy_admin/Feedback/_list_services_content.html.twig'
+      edit:
+        fields:
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }
+      new:
+        fields:
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }

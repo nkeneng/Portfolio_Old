@@ -36,7 +36,6 @@ class Messages
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank
-     * @Assert\Length(min="100")
      */
     private $content;
 

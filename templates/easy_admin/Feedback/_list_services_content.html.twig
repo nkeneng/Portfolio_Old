@@ -1,0 +1,8 @@
+{% if view == 'show' %}
+    {{ value|nl2br }}
+{% elseif view == 'list'  %}
+    {% set local_language = 'en' %}
+    {{ value is not empty ?  value[local_language]|length > 50 ?  value[local_language] | slice(0,50)~'...' : value[local_language]  : value|nl2br  }}
+{% else %}
+    {{ value|striptags|easyadmin_truncate }}
+{% endif %}

@@ -10,7 +10,7 @@ export default function NavLinks({dest, active, id}) {
     const {language} = useContext(LanguageContext);
     const destination = '/' + dest.toLowerCase();
     return (
-        <NavLink activeClassName={active ? 'active' : ''} exact to={destination}>
+        <NavLink activeClassName='active' exact to={destination}>
             <div className="column">
                 <RenderImage id={id} isMobile={false}/>
                 <p>{NavLabels[id-1][language]}</p>

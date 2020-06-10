@@ -1,0 +1,10 @@
+easy_admin:
+  site_name: 'Steven Portfolio'
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - 'easy_admin/Feedback/_form_theme.html.twig'
+    brand_color: '#1877F2'
+    assets:
+      css:
+        - 'admin/css/style.css'

@@ -1,7 +1,9 @@
 @import '~bulma';
 @import '~font-awesome';
 
+
 :root {
+  --swiper-theme-color:#1877F2;
   --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
   --black-text: black;
   --submit-text: #fff;
@@ -88,6 +90,7 @@ body {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   overflow-y: auto;
+  overflow-x: hidden;
   background-color: var(--container1-body-background);
   flex-grow: 1.5;
 
@@ -132,7 +135,7 @@ body {
   .columns.menu-right {
     height: 100%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .column {
       cursor: pointer;
@@ -144,7 +147,10 @@ body {
 
 //portfolio item
 .portfolio-box {
-  .hover-content {
+  img{
+    width: 100%;
+  }
+  .card-content {
     visibility: hidden;
     width: 300px;
     left: 12px !important;
@@ -154,7 +160,7 @@ body {
   &:hover {
     cursor: pointer;
 
-    .hover-content {
+    .card-content {
       visibility: visible;
     }
   }
@@ -248,6 +254,7 @@ div[id^="portfolio-group-"].is-active {
 }
 
 .skills {
+  overflow-y: hidden;
   overflow-x: auto;
 }
 
@@ -281,6 +288,25 @@ i {
   }
 }
 
+.active {
+  p {
+    color: var(--second-color);
+  }
+}
+
+.active-mobile {
+  background-color: white;
+
+  span {
+    color: #3273dc !important;;
+  }
+}
+
+.swiper-container {
+  width: 75%;
+  height: 175px;
+}
+
 @import "helpers";
 @import "dark-theme";
 @import "desktop";
@@ -288,3 +314,4 @@ i {
 @import "slide";
 @import "light-mode";
 @import "dark-mode";
+@import "portfolio_item";

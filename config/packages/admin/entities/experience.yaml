@@ -1,0 +1,32 @@
+easy_admin:
+  entities:
+    Experience:
+      class: App\Entity\Experience
+      label: 'Experience'
+      list:
+        title: 'List of all experiences'
+        help: 'list of experiences'
+        actions:
+          - { name: 'edit', label: '', icon: 'edit' }
+          - { name: 'delete', label: '', icon: 'trash' }
+        fields:
+          - {property: 'id'}
+          - {property: 'title'}
+          - {property: 'content'}
+          - {property: 'startDate'}
+          - {property: 'endDate'}
+          - {property: 'image', type: 'image', base_path: '%app.path.images%'}
+      edit:
+        fields:
+          - {property: 'title'}
+          - {property: 'content'}
+          - {property: 'startDate'}
+          - {property: 'endDate'}
+          - {property: 'imageFile',label: 'Logo', type: 'vich_image'}
+      new:
+        fields:
+          - {property: 'title'}
+          - {property: 'content'}
+          - {property: 'startDate'}
+          - {property: 'endDate'}
+          - {property: 'imageFile',label: 'Logo', type: 'vich_image'}

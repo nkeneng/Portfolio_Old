@@ -33,9 +33,10 @@ class Form extends Component {
         }
     };
     handleMessageChange = event => {
-        const messageRegex = RegExp('^[ .a-zA-Z0-9:-]{1,150}$');
+        //@TODO i wanted to put a message security but not sure if it's necessary
+        // const messageRegex = RegExp('^[ .a-zA-Z0-9]$');
         const value = event.currentTarget.value;
-        if (messageRegex.test(value) && value.length > 30) {
+        if (value.length > 20) {
             this.setState({messageIsValid: true, message: value})
         } else {
             this.setState({messageIsValid: false, message: value})

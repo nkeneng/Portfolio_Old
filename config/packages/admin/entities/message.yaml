@@ -1,0 +1,26 @@
+easy_admin:
+  entities:
+    Messages:
+      class: App\Entity\Messages
+      label: 'Messages'
+      list:
+        title: 'List of all Messages'
+        help: 'list of Messages'
+        actions:
+          - { name: 'edit', label: '', icon: 'edit' }
+          - { name: 'delete', label: '', icon: 'trash' }
+        fields:
+          - {property: 'id'}
+          - {property: 'name'}
+          - {property: 'email'}
+          - {property: 'content'}
+      edit:
+        fields:
+          - {property: 'name'}
+          - {property: 'email'}
+          - {property: 'content'}
+      new:
+        fields:
+          - {property: 'name'}
+          - {property: 'email'}
+          - {property: 'content'}

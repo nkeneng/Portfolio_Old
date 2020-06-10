@@ -1,0 +1,28 @@
+easy_admin:
+  entities:
+    FeedBack:
+      class: App\Entity\FeedBack
+      label: 'FeedBack'
+      list:
+        title: 'List of all FeedBack'
+        help: 'list of FeedBack'
+        actions:
+          - { name: 'edit', label: '', icon: 'edit' }
+          - { name: 'delete', label: '', icon: 'trash' }
+        fields:
+          - {property: 'id'}
+          - {property: 'title'}
+          - {property: 'content'}
+          - {property: 'image', type: 'image', base_path: '%app.path.images%'}
+        templates:
+          field_json: 'easy_admin/Feedback/_list_feedback_content.html.twig'
+      edit:
+        fields:
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - {property: 'imageFile',label: 'Logo', type: 'vich_image'}
+      new:
+        fields:
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - {property: 'imageFile',label: 'Logo', type: 'vich_image'}

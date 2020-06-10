@@ -33,11 +33,11 @@ class MobileNav extends Component {
                                     {NavElements}
                                     <a onClick={setTheme}
                                        className="has-text-centered navbar-item">
-                                        <div><i className={themeClass}/></div>
+                                        <div><i className={themeClass+' nav-icons'}/></div>
                                         <span className="black-mobile">Theme</span>
                                     </a>
                                        <a className="has-text-centered navbar-item">
-                                           <div><i className="fa fa-globe"/></div>
+                                           <div><i className="fa fa-globe nav-icons"/></div>
                                            <div className="select is-small">
                                                <select value={language}
                                                        onChange={(e) => setLanguage(e.target.options[e.target.selectedIndex].getAttribute('data-key'))}>{fields}</select>

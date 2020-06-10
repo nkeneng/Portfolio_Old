@@ -1,34 +1,62 @@
 import React, {Component} from 'react';
 import {FetchPortfolio} from "../../Api/Fetch_Portfolio";
-import {PortfolioItem} from "../Portfolio_Components/Portfolio_Item";
+import Swiper from 'swiper';
+import "swiper/css/swiper.css";
+import LanguageContext from "../../Context/LanguageContext";
+
+export const ApiLanguages = {
+    'Francais': 'fr',
+    'English': 'en',
+    'Deutsch': 'de'
+};
 
 class Feedback extends Component {
-
+    static contextType = LanguageContext;
     state = {
         feedback: [],
-        loading:true
+        loading: true,
+        active: 1
     };
 
     async componentDidMount() {
         const feedback = await FetchPortfolio('feedback');
         this.setState({feedback});
+        const mySwiper = new Swiper('.swiper-container', {
+            updateOnWindowResize: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
     }
 
     render() {
-        const {feedback} = this.state;
+        const {language} = this.context;
+        const {feedback, active} = this.state;
         const feedBackElements = feedback.map((feedback, key) => (
-            <div key={key} id={"slide"+key+1} className="m-auto feedback ">
+            <div key={key} className={"m-auto feedback swiper-slide "}>
                 <p className="has-text-centered">
-                    {feedback.content}
+                    {feedback.content[ApiLanguages[language]]}
                 </p>
-                <p className={"subtitle has-text-centered"}>{feedback.title}</p>
-                <img className="is-block m-auto" src="../Images/logo.jpg.png" alt=""/>
+                <p className={"has-text-black has-text-centered"}>{feedback.title}</p>
+                <img className="is-block m-auto" src={'../images/' + feedback.image} alt=""/>
             </div>
         ));
         return (
             <div className="content">
                 <h2 className="title">Feedback</h2>
-                {feedBackElements}
+                <div className="swiper-container">
+                    <div className="swiper-wrapper">
+                        {feedBackElements}
+                    </div>
+                    <div className="swiper-pagination"/>
+                    <div className="swiper-button-prev"/>
+                    <div className="swiper-button-next"/>
+                </div>
             </div>
         );
     }

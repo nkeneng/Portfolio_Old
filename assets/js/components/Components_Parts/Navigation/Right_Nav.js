@@ -4,7 +4,7 @@ import {dest} from "./Nav_Utilities";
 
 export default function RightNav() {
     const NavElements = dest.map((item, key) => (
-        <NavLinks key={key} dest={item} active={true} id={key + 1}/>
+        <NavLinks key={key} dest={item} id={key + 1}/>
     ));
     return (
         <div className="is-hidden-mobile right-navbar">

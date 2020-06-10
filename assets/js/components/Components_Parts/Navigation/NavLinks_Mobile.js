@@ -10,7 +10,7 @@ export default function NavLinksMobile({dest, active, id}) {
     const {language} = useContext(LanguageContext);
     const destination = '/' + dest.toLowerCase();
     return (
-        <NavLink className="navbar-item" exact to={destination}>
+        <NavLink activeClassName='active-mobile' className="navbar-item" exact to={destination}>
             <RenderImage id={id} isMobile={true}/>
             <span className="black-mobile">{NavLabels[id - 1][language]}</span>
         </NavLink>
