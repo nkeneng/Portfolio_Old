@@ -7,7 +7,7 @@ import {PortfolioItem} from "./Components_Parts/Portfolio_Components/Portfolio_I
 export default class Portfolio extends React.Component {
 
     state = {
-        currentCategory: 1,
+        currentCategory: 0,
         categories: [],
         portfolios: [],
         elements: [],
@@ -54,7 +54,7 @@ export default class Portfolio extends React.Component {
             <PortfolioItem key={key} portfolio={item}/>
         ));
         return (
-            <div className="page is-12 column portfolio">
+            <div className="page is-12-touch is-12 column portfolio">
                 <div id="1" className="content">
                     <div
                         className="tabs is-center is-medium is-boxed is-bordered is-toggle is-toggle-rounded">
@@ -63,7 +63,10 @@ export default class Portfolio extends React.Component {
                         </ul>
                     </div>
                     <h2 className="title has-text-centered">{loading? 'Loading ...':'Portfolio'}</h2>
-                    <div id="portfolio-group-1" className="columns is-active  is-multiline">
+                    <div className={"spin-load "+(loading?'':'is-hidden')}><span className={"loader " }>
+                        <span className={"loader-inner "}/>
+                    </span></div>
+                    <div  className="columns is-active  is-multiline">
                         {portfolioElements}
                     </div>
                 </div>

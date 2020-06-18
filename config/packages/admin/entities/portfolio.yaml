@@ -20,10 +20,12 @@ easy_admin:
           - {property: 'title'}
           - {property: 'involvement'}
           - {property: 'category'}
+          - {property: 'url'}
           - {property: 'imageFile',label: 'Logo', type: 'vich_image'}
       new:
         fields:
           - {property: 'title'}
           - {property: 'involvement'}
           - {property: 'category'}
+          - {property: 'url'}
           - {property: 'imageFile',label: 'Logo', type: 'vich_image'}

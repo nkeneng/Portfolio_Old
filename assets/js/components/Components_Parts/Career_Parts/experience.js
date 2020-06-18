@@ -17,7 +17,7 @@ class Experience extends Component {
 
     render() {
         const {experiences} = this.state;
-        const feedBackElements = experiences.map((experience, key) => (
+        const experiencesElements = experiences.map((experience, key) => (
             <div className="column has-text-centered">
                 <p className="title is-4">{experience.startDate} - {experience.endDate}</p>
                 <p className="has-text-black">{experience.title}</p>
@@ -30,7 +30,7 @@ class Experience extends Component {
                 <h2 className="title">Experience
                 </h2>
                 <div className="columns">
-                    {feedBackElements}
+                    {experiencesElements}
                 </div>
             </div>
         );

@@ -7,7 +7,7 @@ export default function RightNav() {
         <NavLinks key={key} dest={item} id={key + 1}/>
     ));
     return (
-        <div className="is-hidden-mobile right-navbar">
+        <div className="is-hidden-touch right-navbar">
             <div className="columns menu-right has-text-centered is-multiline">
                 {NavElements}
             </div>

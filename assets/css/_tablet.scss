@@ -1,0 +1,22 @@
+@include tablet{
+
+  .circular--landscape {
+    display: inline-block;
+    position: relative;
+    margin-left: 22px;
+    width: 200px !important;
+    height: 200px !important;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .circular--landscape img {
+    width: auto;
+    height: 100%;
+  }
+  .my-info {
+    margin: {
+      top: 120px !important;
+    }
+  }
+}

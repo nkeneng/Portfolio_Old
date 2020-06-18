@@ -14,11 +14,10 @@ class Header extends Component {
     render() {
         const {theme} = this.context;
         return (
-            <div className="column Header">
+            <div className="column is-12-touch Header">
                 <ThemeSwitcher/>
                 <div className="columns header-content is-absolute-bottom is-multiline ">
-                    <div
-                        className="column social-network is-two-fifths is-two-fifths-tablet is-full-mobile is-relative">
+                    <div className="column  social-network  is-two-fifths  is-full-mobile is-relative">
                         <div className="columns is-mobile is-absolute-centered-desktop">
                             <div className="column">
                                 <img
@@ -41,25 +40,24 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="column profil-image is-hidden-mobile  is-one-fifth no-padding ">
+                    <div className="column profil-image is-hidden-touch is-hidden-tablet-only  is-one-fifth no-padding ">
                         <div className="circular--landscape">
                             <img
                                 src={theme ? dark_profil : light_profil}/>
                         </div>
                     </div>
-                    <div
-                        className="column my-info-column is-absolute-centered-mobile is-one-fifth-tablet  is-two-fifths is-full-mobile">
+                    <div className="column my-info-column is-absolute-centered-mobile is-one-fifth-tablet  is-two-fifths is-full-mobile">
                         <div className="my-info has-text-centered">
                             <div className="author-name ">
-                                <h3 className="title is-2">About</h3>
+                                <h3 className="title is-2">Steven Nkeneng</h3>
                             </div>
                             <div className="profession mt-4 ">
                                 <h4 id="change" className="title blue"></h4>
                             </div>
-                            <div
-                                className="button mt-14 download-mobile send  is-mobile-only is-medium">Download
-                                CV
-                            </div>
+                        </div>
+                        <div
+                            className="button mt-14 download-mobile send  is-mobile-only is-medium">Download
+                            CV
                         </div>
                     </div>
                 </div>

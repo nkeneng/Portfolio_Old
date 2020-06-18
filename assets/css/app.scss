@@ -1,7 +1,6 @@
 @import '~bulma';
 @import '~font-awesome';
 
-
 :root {
   --swiper-theme-color:#1877F2;
   --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
@@ -16,13 +15,10 @@
 }
 
 body {
+
   * {
     &::selection {
       background-color: #ABCDEF;
-    }
-
-    .theme-switch {
-      cursor: pointer;
     }
   }
 
@@ -37,47 +33,7 @@ body {
   }
 }
 
-/*container of all the page*/
-.container-1 {
-  height: 100%;
-  flex-direction: column;
-  /*header of the container-1 */
-  .Header {
-    border-radius: var(--page-edges-border-radius) var(--page-edges-border-radius) 0 0;
-    background: url("../Images/header-background.jpg") no-repeat center;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
 
-  .header-content {
-    margin-bottom: 0 !important;
-    width: 98.5%;
-  }
-
-  .column.profil-image {
-    position: relative;
-
-    .circle {
-      bottom: -3px;
-      position: absolute;
-      border-radius: 50%;
-      display: block;
-      max-height: 126%;
-      min-height: 130%;
-      width: 88%;
-      background: {
-        image: url(../Images/photo-profil.jpg);
-        position: center;
-        size: cover;
-      };
-    }
-  }
-
-
-}
 
 
 //end container-1
@@ -87,8 +43,6 @@ body {
 }
 
 .page-content {
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--container1-body-background);
@@ -117,57 +71,6 @@ body {
   }
 }
 
-//end page content
-
-//right menu
-.right-navbar {
-  background-color: var(--side-background-color);
-  z-index: 2;
-  border-radius: 25px 25px 25px 0;
-  height: 60vh;
-  width: 97px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-bottom: -33px;
-  margin-right: -78px;
-
-  .columns.menu-right {
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-
-    .column {
-      cursor: pointer;
-    }
-  }
-}
-
-//end right menu
-
-//portfolio item
-.portfolio-box {
-  img{
-    width: 100%;
-  }
-  .card-content {
-    visibility: hidden;
-    width: 300px;
-    left: 12px !important;
-    top: 35% !important;
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    .card-content {
-      visibility: visible;
-    }
-  }
-}
-
-//end portfolio item
-
 // submit button
 .button.send {
   color: var(--submit-text);
@@ -180,30 +83,6 @@ body {
   }
 }
 
-//end submit button
-
-.downloader {
-  padding-top: 5px;
-  height: 34px;
-  width: 215px;
-  background-color: var(--side-background-color);
-  position: absolute;
-  bottom: 1px;
-  right: 18px;
-  margin-bottom: -34px !important;
-  border-bottom-left-radius: 15px;
-}
-
-.theme-switcher-desktop {
-  width: 209px;
-  height: 40px;
-  background-color: transparent;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 2
-}
-
 .title.blue {
   height: 20px;
   max-height: 50px;
@@ -211,9 +90,7 @@ body {
   color: var(--second-color) !important;
 }
 
-.theme-switcher-desktop {
-  font-size: 18px !important;
-}
+
 
 .tabs.is-toggle li.is-active a {
   background-color: var(--second-color) !important;
@@ -236,21 +113,6 @@ div[id^="portfolio-group-"] {
 
 div[id^="portfolio-group-"].is-active {
   display: flex !important;
-}
-
-.circular--landscape {
-  display: inline-block;
-  position: relative;
-  width: 150px;
-  margin-top: 70px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.circular--landscape img {
-  width: auto;
-  height: 100%;
 }
 
 .skills {
@@ -302,16 +164,57 @@ i {
   }
 }
 
-.swiper-container {
-  width: 75%;
-  height: 175px;
-}
 
 @import "helpers";
-@import "dark-theme";
 @import "desktop";
+//@import "tablet";
 @import "mobile";
 @import "slide";
 @import "light-mode";
 @import "dark-mode";
 @import "portfolio_item";
+
+
+.spin-load{
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.loader {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  border: 4px solid #Fff;
+
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}

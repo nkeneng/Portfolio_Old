@@ -24,7 +24,7 @@ class ThemeSwitcher extends Component {
                 ));
                 let themeClass = "fa theme-switch " + (theme ? 'fa-toggle-on' : 'fa-toggle-off');
                 return (
-                    <nav className="navbar desktop-theme-switcher is-hidden-mobile"
+                    <nav className="navbar desktop-theme-switcher is-hidden-touch"
                          role="navigation" aria-label="dropdown navigation">
                         <div className="navbar-menu">
                             <div className="navbar-end">

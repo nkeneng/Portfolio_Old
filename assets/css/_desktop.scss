@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px ) {
+@include desktop {
   body {
     overflow: hidden;
     width: 100vw;
@@ -10,7 +10,12 @@
     color: #646464;
     letter-spacing: 0em;
     font-weight: 400;
+
+    .theme-switch {
+      cursor: pointer;
+    }
   }
+
 
   #root {
     overflow: hidden;
@@ -22,9 +27,86 @@
     align-items: center;
   }
 
+  /*container of all the page*/
+  .container-1 {
+    height: 100%;
+    flex-direction: column;
+    /*header of the container-1 */
+    .Header {
+      border-radius: var(--page-edges-border-radius) var(--page-edges-border-radius) 0 0;
+      background: url("../Images/header-background.jpg") no-repeat center;
+      background-size: cover;
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .header-content {
+      margin-bottom: 0 !important;
+      width: 98.5%;
+    }
+
+    .column.profil-image {
+      position: relative;
+    }
+
+  }
+
+  //right menu
+  .right-navbar {
+    background-color: var(--side-background-color);
+    z-index: 2;
+    border-radius: 25px 25px 25px 0;
+    height: 60vh;
+    width: 97px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: -33px;
+    margin-right: -78px;
+
+    .columns.menu-right {
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .column {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .theme-switcher-desktop {
+    font-size: 18px !important;
+  }
+
+  .downloader {
+    padding-top: 5px;
+    height: 34px;
+    width: 215px;
+    background-color: var(--side-background-color);
+    position: absolute;
+    bottom: 1px;
+    right: 18px;
+    margin-bottom: -34px !important;
+    border-bottom-left-radius: 15px;
+  }
+
+  .theme-switcher-desktop {
+    width: 209px;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2
+  }
+
+  //end right menu
+
   .Container {
     margin: 5vh 6vw 8vh 6vw;
-    position: relative;
     width: 80%;
     height: 100vh;
     max-width: 1268px;
@@ -88,10 +170,10 @@
       }
     }
   }
-  .navbar-end a.navbar-item:hover{
+  .navbar-end a.navbar-item:hover {
     background-color: transparent !important;
   }
-  .navbar.desktop-theme-switcher{
+  .navbar.desktop-theme-switcher {
     background-color: transparent !important;
   }
 
@@ -99,54 +181,63 @@
     padding-right: 35px;
     position: absolute;
   }
-  .page-content{
+  .page-content {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     position: relative;
   }
 
 
-  .fade-exit > .page{
+  .fade-exit > .page {
     z-index: 0.5;
   }
 
-  .fade-enter > .page{
+  .fade-enter > .page {
     z-index: 1;
   }
 
-  .fade-enter.left > .page{
+  .fade-enter.left > .page {
     opacity: 1;
     transform: translateX(100%)
   }
-  .fade-exit.left > .page{
+  .fade-exit.left > .page {
     opacity: 0.5;
     transform: translateX(0%)
   }
-  .fade-enter.right > .page{
+  .fade-enter.right > .page {
     opacity: 1;
     transform: translateX(100%)
   }
-  .fade-exit.right > .page{
+  .fade-exit.right > .page {
     opacity: 0.5;
     transform: translateX(0%)
   }
 
-  .fade-enter.fade-enter-active > .page{
+  .fade-enter.fade-enter-active > .page {
     transform: translateX(0);
     transition: all 1500ms ease-in-out;
   }
 
-  .fade-exit.fade-exit-active > .page{
+  .fade-exit.fade-exit-active > .page {
     transform: translateX(100%);
     transition: all 1500ms ease-in-out;
   }
 
-}
-@media screen and (min-width: 1024px ) {
+  .swiper-container {
+    width: 75%;
+    height: 190px;
+  }
+
+  .is-hidden-mobile {
+    display: block !important;
+  }
+
   .circular--landscape {
     display: inline-block;
     position: relative;
     margin-left: 22px;
-    width: 200px !important;
-    height: 200px !important;
+    width: 200px!important;
+    height: 200px!important;
     overflow: hidden;
     border-radius: 50%;
   }
@@ -155,9 +246,5 @@
     width: auto;
     height: 100%;
   }
-  .my-info {
-    margin: {
-      top: 120px !important;
-    }
-  }
+
 }

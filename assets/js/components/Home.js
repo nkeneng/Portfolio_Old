@@ -10,7 +10,7 @@ class Home extends Component {
     render() {
         const language = this.context;
         return (
-            <div className=" page is-12 column mt-4">
+            <div className="page is-12 is-12-touch  column mt-4">
                 <AboutMe lang={language}/>
                 <Feedback/>
                 <Services/>
