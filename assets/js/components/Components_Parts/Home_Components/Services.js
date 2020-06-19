@@ -20,7 +20,7 @@ class Services extends Component {
         const {language} = this.context;
         const {services} = this.state;
         const servicesElements = services.map((service, key) => (
-            <div className="column is-hidden-tablet has-text-centered">
+            <div className="column has-text-centered">
                 <h3 className="has-text-black">{service.title[ApiLanguages[language]]}</h3>
                 <p>
                     {service.content[ApiLanguages[language]]}

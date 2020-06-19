@@ -11,7 +11,7 @@ export default class Portfolio extends React.Component {
         categories: [],
         portfolios: [],
         elements: [],
-        loading:true
+        loading: true
     };
 
     constructor(props) {
@@ -28,22 +28,22 @@ export default class Portfolio extends React.Component {
     }
 
     setCategoryPortfolio() {
-        const {portfolios, categories,loading} = this.state;
+        const {portfolios, categories, loading} = this.state;
         const elements = portfolios.filter(item => item.category.title === categories[this.state.currentCategory].title)
-        this.setState({elements,loading: !loading})
+        this.setState({elements, loading: !loading})
     };
 
     changeCurrentCategory = (currentCategory) => {
         // I attach a callback function on this setstate because the setState is asynchronous
         // and i need to update other things once the state changed
         this.setState({
-            currentCategory: currentCategory,loading:!this.state.loading
+            currentCategory: currentCategory, loading: !this.state.loading
         }, () => this.setCategoryPortfolio());
 
     };
 
     render() {
-        const {categories, currentCategory, elements,loading} = this.state;
+        const {categories, currentCategory, elements, loading} = this.state;
         const categoryElements = categories.map((item, key) => (
             <Navigation onCatChange={this.changeCurrentCategory} key={key}
                         isActive={key === currentCategory} id={key}
@@ -62,11 +62,12 @@ export default class Portfolio extends React.Component {
                             {categoryElements}
                         </ul>
                     </div>
-                    <h2 className="title has-text-centered">{loading? 'Loading ...':'Portfolio'}</h2>
-                    <div className={"spin-load "+(loading?'':'is-hidden')}><span className={"loader " }>
+                    <h2 className="title has-text-centered">{loading ? 'Loading ...' : 'Portfolio'}</h2>
+                    <div className={"spin-load " + (loading ? '' : 'is-hidden')}><span
+                        className={"loader "}>
                         <span className={"loader-inner "}/>
                     </span></div>
-                    <div  className="columns is-active  is-multiline">
+                    <div className="columns is-active  is-multiline">
                         {portfolioElements}
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 @import '~font-awesome';
 
 :root {
-  --swiper-theme-color:#1877F2;
+  --swiper-theme-color: #1877F2;
   --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
   --black-text: black;
   --submit-text: #fff;
@@ -33,9 +33,6 @@ body {
   }
 }
 
-
-
-
 //end container-1
 
 .columns {
@@ -47,6 +44,7 @@ body {
   overflow-x: hidden;
   background-color: var(--container1-body-background);
   flex-grow: 1.5;
+  padding-bottom: 10px;
 
   .columns.is-mobile.hobby {
     color: #1877F2;
@@ -89,8 +87,6 @@ body {
   //transform: translate(-30%,-30%);
   color: var(--second-color) !important;
 }
-
-
 
 .tabs.is-toggle li.is-active a {
   background-color: var(--second-color) !important;
@@ -164,18 +160,15 @@ i {
   }
 }
 
-
-@import "helpers";
 @import "desktop";
-//@import "tablet";
 @import "mobile";
 @import "slide";
 @import "light-mode";
 @import "dark-mode";
 @import "portfolio_item";
+@import "helpers";
 
-
-.spin-load{
+.spin-load {
   position: relative;
   width: 100%;
   height: 30px;

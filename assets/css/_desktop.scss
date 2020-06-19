@@ -158,6 +158,10 @@
     display: none;
   }
 
+  .content{
+  padding-right: 20px;
+  }
+
   .container-1 {
     .my-info-column {
       .my-info {
@@ -178,10 +182,12 @@
   }
 
   .page {
-    padding-right: 35px;
+    padding-right: 65px;
     position: absolute;
   }
+
   .page-content {
+    width: 100%;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     position: relative;

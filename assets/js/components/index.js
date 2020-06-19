@@ -29,6 +29,7 @@ class Index extends Component {
     }
 
     render() {
+
         const location = this.props.location;
         const timeout = {enter: 4500, exit: 1000};
         const currentKey = location.pathname.split("/")[1] || "/";
@@ -39,7 +40,7 @@ class Index extends Component {
                 <div className="columns is-mobile container-1 is-multiline ">
                     <Header/>
                     <div className="column is-12-touch page-content">
-                        <div className="columns content-container">
+                        <div className="columns is-multiline content-container">
                             <MobileNav/>
                             <div className="column is-12">
                                 <Route  render={({location}) => (
@@ -52,7 +53,7 @@ class Index extends Component {
                                             UnmountOnExit={false}
                                         >
                                             <div
-                                                className={this.getDepth(location) - this.state.prevDepth >= 0 ? "left test" : "right"}>
+                                                className={this.getDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"}>
                                                 <Switch location={location}>
                                                     <Route exact path="/"
                                                            component={Home}/>
