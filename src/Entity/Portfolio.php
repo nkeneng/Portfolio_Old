@@ -63,6 +63,7 @@ class Portfolio
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("portfolio:read")
      */
     private $url;
 

@@ -14,7 +14,7 @@ easy_admin:
           - {property: 'title'}
           - {property: 'involvement'}
           - {property: 'category'}
-          - {property: 'image', type: 'image', base_path: '%app.path.images%'}
+          - {property: 'image', template: 'easy_admin/vich_uploader_image.html.twig'}
       edit:
         fields:
           - {property: 'title'}

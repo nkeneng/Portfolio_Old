@@ -19,7 +19,7 @@ class FeedBackController extends AbstractController
     }
 
     /**
-     * @Route("/api/feedback", name="feed_back",methods={"GET"})
+     * @Route("/api/feedbacks", name="feed_back",methods={"GET"})
      */
     public function index()
     {

@@ -12,7 +12,7 @@ class Services extends Component {
     };
 
     async componentDidMount() {
-        const services = await FetchPortfolio('service');
+        const services = await FetchPortfolio('services');
         this.setState({services});
     }
 

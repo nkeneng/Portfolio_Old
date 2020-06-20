@@ -1,3 +1,34 @@
-.form-widget{
+.form-widget {
     width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg: linear-gradient(#212026, #212026, #212026);
+        --text-color-dark: #C4C4C4;
+        --form-bg: #212026;
+        --color-primary: #FED700 !important;
+        --text-on-primary: #000;
+        --text-color: #C4C4C4 ;
+    }
+
+    a {
+        color: var(--color-primary);
+    }
+
+    .select2-dropdown{
+        background-color: #2B2B33 !important;
+    }
+
+    .table {
+        color: white;
+    }
+    .content, .content-footer, .content-header{
+        background-color: #2B2B33 !important;
+    }
+
+    body {
+        background-image: var(--body-bg) !important;
+        color: whitesmoke !important;
+    }
 }

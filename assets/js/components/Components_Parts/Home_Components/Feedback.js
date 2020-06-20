@@ -19,7 +19,7 @@ class Feedback extends Component {
     };
 
     async componentDidMount() {
-        const feedback = await FetchPortfolio('feedback');
+        const feedback = await FetchPortfolio('feedbacks');
         this.setState({feedback});
         const mySwiper = new Swiper('.swiper-container', {
             updateOnWindowResize: true,
