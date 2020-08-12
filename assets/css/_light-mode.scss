@@ -10,6 +10,10 @@ body.light-mode {
   --page-edges-border-radius: 25px;
   --profil-image: url("../Images/photo-profil.jpg");
 
+  .firefly{
+    display: none;
+  }
+
   .title.blue {
     color: var(--second-color) !important;
   }

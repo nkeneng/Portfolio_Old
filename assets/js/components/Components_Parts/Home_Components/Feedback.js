@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FetchPortfolio} from "../../Api/Fetch_Portfolio";
+import {FetchPortfolio} from "../../Api/Api";
 import Swiper from 'swiper';
 import "swiper/css/swiper.css";
 import LanguageContext from "../../Context/LanguageContext";

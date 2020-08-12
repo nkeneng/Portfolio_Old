@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from "../../../../images/logo.jpg.png";
-import {FetchPortfolio} from "../../Api/Fetch_Portfolio";
+import {FetchPortfolio} from "../../Api/Api";
 
 class Experience extends Component {
 
@@ -18,7 +18,7 @@ class Experience extends Component {
     render() {
         const {experiences} = this.state;
         const experiencesElements = experiences.map((experience, key) => (
-            <div className="column has-text-centered">
+            <div key={key} className="column has-text-centered">
                 <p className="title is-4">{experience.startDate} - {experience.endDate}</p>
                 <p className="has-text-black">{experience.title}</p>
                 <p>{experience.content}</p>

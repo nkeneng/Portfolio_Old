@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FetchPortfolio} from "../../Api/Fetch_Portfolio";
+import {FetchPortfolio} from "../../Api/Api";
 import LanguageContext from "../../Context/LanguageContext";
 import {ApiLanguages} from "./Feedback";
 

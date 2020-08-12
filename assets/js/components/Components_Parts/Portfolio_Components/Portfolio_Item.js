@@ -14,7 +14,7 @@ export const PortfolioItem = ({portfolio}) => {
                             className="info">{portfolio.involvement ? 'Total' : 'Partial'}</span><br/>
                         <span>
                             <a href={portfolio.url}>
-                                <button className="is-priimary button send">
+                                <button className="is-primary button send">
                                 To the Website
                             </button>
                             </a>

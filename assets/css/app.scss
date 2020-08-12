@@ -22,8 +22,6 @@ body {
     }
   }
 
-  background-image: var(--body-background-color);
-
   a, p, span, h4 {
     color: var(--black-text);
   }
@@ -84,7 +82,6 @@ body {
 .title.blue {
   height: 20px;
   max-height: 50px;
-  //transform: translate(-30%,-30%);
   color: var(--second-color) !important;
 }
 
@@ -167,6 +164,8 @@ i {
 @import "dark-mode";
 @import "portfolio_item";
 @import "helpers";
+@import "dark-mode-animation.sass";
+@import "light-mode-animation";
 
 .spin-load {
   position: relative;
@@ -210,4 +209,18 @@ i {
   100% {
     height: 0%;
   }
+}
+
+.area {
+  height: 100vh;
+}
+
+.failure {
+  color: $danger !important;
+}
+.checked{
+  color: $primary !important;
+}
+.gray:hover{
+  filter: grayscale(60%);
 }

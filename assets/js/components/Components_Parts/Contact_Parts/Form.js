@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Component} from "react";
-import {SendData} from "../../Api/Fetch_Portfolio";
+import {SendData} from "../../Api/Api";
 
 class Form extends Component {
 
@@ -33,7 +33,7 @@ class Form extends Component {
         }
     };
     handleMessageChange = event => {
-        //@TODO i wanted to put a message security but not sure if it's necessary
+        //@TODO i wanted to put a message text security but not sure if it's necessary
         // const messageRegex = RegExp('^[ .a-zA-Z0-9]$');
         const value = event.currentTarget.value;
         if (value.length > 20) {
@@ -110,7 +110,7 @@ class Form extends Component {
                                 <i className="fa fa-user"/>
                             </span>
                             <span className="icon is-small is-right">
-                            <i className={"fa " + (nameIsValid !== undefined ? (!nameIsValid ? 'fa-exclamation-triangle' : 'fa-check') : '')}/>
+                            <i className={"fa " + (nameIsValid !== undefined ? (!nameIsValid ? 'fa-exclamation-triangle failure' : 'fa-check checked') : '')}/>
                             </span>
                             <p className={"help " + (!nameIsValid && nameIsValid !== undefined ? '' : 'is-hidden')}>
                                 The name is still not long enough
@@ -130,7 +130,7 @@ class Form extends Component {
                             <i className="fa fa-envelope"/>
                             </span>
                             <span className="icon is-small is-right">
-                            <i className={"fa " + (emailIsValid !== undefined ? (!emailIsValid ? 'fa-exclamation-triangle' : 'fa-check') : '')}/>
+                            <i className={"fa " + (emailIsValid !== undefined ? (!emailIsValid ? 'fa-exclamation-triangle failure' : 'fa-check checked') : '')}/>
                             </span>
                             <p className={"help " + (!emailIsValid && emailIsValid !== undefined ? '' : 'is-hidden')}>
                                 Your email doesn't respect the email convention

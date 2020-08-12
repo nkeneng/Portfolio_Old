@@ -29,7 +29,6 @@ class Index extends Component {
     }
 
     render() {
-
         const location = this.props.location;
         const timeout = {enter: 4500, exit: 1000};
         const currentKey = location.pathname.split("/")[1] || "/";
@@ -50,7 +49,6 @@ class Index extends Component {
                                             timeout={timeout}
                                             classNames="fade"
                                             mountOnEnter={true}
-                                            UnmountOnExit={false}
                                         >
                                             <div
                                                 className={this.getDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"}>

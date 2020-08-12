@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FetchPortfolio} from "./Api/Fetch_Portfolio";
+import {FetchPortfolio} from "./Api/Api";
 import {Navigation} from "./Components_Parts/Portfolio_Components/Navigation";
 import {PortfolioItem} from "./Components_Parts/Portfolio_Components/Portfolio_Item";
 
