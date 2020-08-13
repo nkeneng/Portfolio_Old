@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
 import logo from "../../../../images/logo.jpg.png";
 import {FetchPortfolio} from "../../Api/Api";
+import LanguageContext
+    from "../../Context/LanguageContext";
+
+export const ApiLanguages = {
+    'Francais': 'fr',
+    'English': 'en',
+    'Deutsch': 'de'
+};
 
 class Experience extends Component {
-
+    static contextType = LanguageContext;
     state = {
         experiences: [],
-        loading:true
+        loading:true,
+        active: 1
     };
 
     async componentDidMount() {
@@ -16,12 +25,13 @@ class Experience extends Component {
 
 
     render() {
+        const {language} = this.context;
         const {experiences} = this.state;
         const experiencesElements = experiences.map((experience, key) => (
             <div key={key} className="column has-text-centered">
                 <p className="title is-4">{experience.startDate} - {experience.endDate}</p>
-                <p className="has-text-black">{experience.title}</p>
-                <p>{experience.content}</p>
+                <p className="has-text-black">{experience.title[ApiLanguages[language]]}</p>
+                <p>{experience.content[ApiLanguages[language]]}</p>
                 <img src={'../images/'+ experience.image} />
             </div>
         ));

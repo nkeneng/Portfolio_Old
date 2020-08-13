@@ -16,17 +16,19 @@ easy_admin:
           - {property: 'startDate'}
           - {property: 'endDate'}
           - {property: 'image', type: 'image', base_path: '%app.path.images%'}
+        templates:
+          field_json: 'easy_admin/Feedback/_list_experience_content.html.twig'
       edit:
         fields:
-          - {property: 'title'}
-          - {property: 'content'}
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }
           - {property: 'startDate'}
           - {property: 'endDate'}
           - {property: 'imageFile',label: 'Logo', type: 'vich_image'}
       new:
         fields:
-          - {property: 'title'}
-          - {property: 'content'}
+          - { property: 'title',type: 'text', type_options: {mapped: true, empty_data: '' } }
+          - { property: 'content',type: 'text', type_options: {mapped: true, empty_data: '' } }
           - {property: 'startDate'}
           - {property: 'endDate'}
           - {property: 'imageFile',label: 'Logo', type: 'vich_image'}

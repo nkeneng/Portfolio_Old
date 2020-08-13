@@ -218,9 +218,11 @@ i {
 .failure {
   color: $danger !important;
 }
-.checked{
+
+.checked {
   color: $primary !important;
 }
-.gray:hover{
+
+.gray:hover {
   filter: grayscale(60%);
 }

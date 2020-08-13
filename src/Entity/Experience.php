@@ -24,12 +24,12 @@ class Experience
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="json")
      */
     private $content;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
     private $title;
 
@@ -66,9 +66,9 @@ class Experience
         return $this->id;
     }
 
-    public function getContent(): ?string
+    public function getContent(): ?array
     {
-        return $this->content;
+        return json_decode($this->content,true);
     }
 
     public function setContent(string $content): self
@@ -78,9 +78,9 @@ class Experience
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): ?array
     {
-        return $this->title;
+        return json_decode($this->title,true);
     }
 
     public function setTitle(string $title): self

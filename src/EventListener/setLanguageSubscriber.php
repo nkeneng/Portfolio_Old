@@ -2,10 +2,12 @@
 
 namespace App\EventListener;
 
+use App\Entity\Experience;
 use App\Entity\FeedBack;
 use App\Entity\Services;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
+use PhpParser\Node\Expr\Cast\Object_;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -21,6 +23,10 @@ class setLanguageSubscriber implements EventSubscriberInterface
      * @var EntityManagerInterface
      */
     private $manager;
+    /**
+     * @var string[]
+     */
+    private $languages;
 
     /**
      * EasyAdminSubscriber constructor.
@@ -31,6 +37,7 @@ class setLanguageSubscriber implements EventSubscriberInterface
     {
         $this->requestStack = $requestStack;
         $this->manager = $manager;
+        $this->languages = ['en', 'de', 'fr'];
     }
 
     /**
@@ -47,29 +54,38 @@ class setLanguageSubscriber implements EventSubscriberInterface
     public function onPrePersist(GenericEvent $event)
     {
         $entity = $event->getSubject();
-        $languages = ['en', 'de', 'fr'];
         if (($entity instanceof FeedBack)) {
             $content = [];
-            foreach ($languages as $language) {
+            foreach ($this->languages as $language) {
                 $index = $language . '_feedback_content';
                 $content[$language] = $this->requestStack->getCurrentRequest()->request->get($index);
             }
             $json_content = json_encode($content);
             $entity->setContent($json_content);
             $entity->setUpdatedAt(new \DateTime());
-        }else if (($entity instanceof Services)){
-            $content = [];
-            $title = [];
-            foreach ($languages as $language) {
-                $index = $language . '_services';
-                $content[$language] = $this->requestStack->getCurrentRequest()->request->get($index)['content'];
-                $title[$language] = $this->requestStack->getCurrentRequest()->request->get($index)['title'];
-            }
+        }
+        else if (($entity instanceof Services)){
+            $this->setTranslationText('_services',$entity);
+        }
+        else if (($entity instanceof Experience)){
+            $this->setTranslationText('_experience',$entity);
+        }
+        else return ;
+    }
 
-            $json_content = json_encode($content);
-            $json_title = json_encode($title);
-            $entity->setContent($json_content);
-            $entity->setTitle($json_title);
-        }else return ;
+    public function setTranslationText(string $type,Object $entity)
+    {
+        $content = [];
+        $title = [];
+        foreach ($this->languages as $language) {
+            $index = $language . $type;
+            $content[$language] = $this->requestStack->getCurrentRequest()->request->get($index)['content'];
+            $title[$language] = $this->requestStack->getCurrentRequest()->request->get($index)['title'];
+        }
+
+        $json_content = json_encode($content);
+        $json_title = json_encode($title);
+        $entity->setContent($json_content);
+        $entity->setTitle($json_title);
     }
 }

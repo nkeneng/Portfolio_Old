@@ -35,6 +35,8 @@
     .Header {
       border-radius: var(--page-edges-border-radius) var(--page-edges-border-radius) 0 0;
       background: url("../Images/header-background.jpg") no-repeat center;
+      //filter: blur(8px);
+      //-webkit-filter: blur(8px);
       background-size: cover;
       position: relative;
       width: 100%;

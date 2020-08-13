@@ -36,7 +36,7 @@ class Feedback extends Component {
 
     render() {
         const {language} = this.context;
-        const {feedback, active} = this.state;
+        const {feedback} = this.state;
         const feedBackElements = feedback.map((feedback, key) => (
             <div key={key} className={"m-auto feedback swiper-slide "}>
                 <p className="has-text-centered">
