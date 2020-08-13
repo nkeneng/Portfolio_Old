@@ -19,33 +19,37 @@ class Header extends Component {
     render() {
         const {theme} = this.context;
         return (
-            <div className="column is-12-touch Header">
-                <ThemeSwitcher/>
+            <div className="column is-12-touch blur">
+                <div className=" Header">
+                </div>
+               <div className="themeSwitch">
+                   <ThemeSwitcher/>
+               </div>
                 <div className="columns header-content is-absolute-bottom is-multiline ">
                     <div
                         className="column  social-network  is-two-fifths  is-full-mobile is-relative">
                         <div className="columns is-mobile is-absolute-centered-desktop">
                             <div className="column">
                                 <img className="gray"
-                                    src={facebook_image} alt="facebook icon"/>
+                                     src={facebook_image} alt="facebook icon"/>
                             </div>
                             <div className="column">
                                 <img className="gray"
-                                    src={instagram_image} alt="instagram icon"/>
+                                     src={instagram_image} alt="instagram icon"/>
 
                             </div>
                             <div className="column">
                                 <img className="gray"
-                                    src={linkedin_image} alt="linkedin icon"/>
+                                     src={linkedin_image} alt="linkedin icon"/>
 
                             </div>
                             <div className="column">
                                 <img className="gray"
-                                    src={git_image} alt="git icon"/>
+                                     src={git_image} alt="git icon"/>
                             </div>
                             <div className="column">
                                 <img className="gray"
-                                    src={xing_image} alt="xing icon"/>
+                                     src={xing_image} alt="xing icon"/>
                             </div>
                         </div>
                     </div>
@@ -73,6 +77,7 @@ class Header extends Component {
                     </div>
                 </div>
             </div>
+
         );
     }
 }
