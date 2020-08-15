@@ -9,11 +9,14 @@ import wordpress from '../../../../images/skills/icons8-wordpress-48.png'
 import css from '../../../../images/skills/icons8-css3-48.png'
 import bulma_image from '../../../../images/skills/bulma-logo.png'
 import * as React from 'react';
+import LanguageContext, {common} from "../../Context/LanguageContext";
+import {useContext} from "react";
 
 export function Skills(props) {
+    const {language} = useContext(LanguageContext);
     return (
         <div id="3" className="content">
-            <h2 className="title">Skills</h2>
+            <h2 className="title">{common[language].skill}</h2>
             <div className="skills">
                 <div className="columns is-mobile">
                     <div className="column  is-3-mobile">

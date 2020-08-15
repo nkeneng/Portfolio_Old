@@ -1,0 +1,46 @@
+{
+  "download":"CV herunterladen",
+  "downloader": {
+    "first": "CV",
+    "second": "herunterladen"
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "german subtitle",
+    "text": "German ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur corporis deserunt dolor eaque earum fugit maxime, molestias nesciunt omnis reprehenderit sint tempore. Animi corporis omnis repellat similique tempora tempore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  },
+  "service": "Meine Dienstleistungen",
+  "education": {
+    "title": "Bildung",
+    "elements": {
+      "first": {
+        "year": "2019 - heute",
+        "text": "German ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "second": {
+        "year": "2020 - heute",
+        "text": "German ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "third": {
+        "year": "2021 - heute",
+        "text": "German ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      }
+    }
+  },
+  "language": "Sprachen",
+  "skill": "Fähigkeiten",
+  "contact": {
+    "title": "Kontaktieren Sie mich",
+    "sideText": "German ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta voluptate facere molestiae consequatur.",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Erklären Sie, wie ich Ihnen helfen kann",
+      "success": "Ihre Nachricht wurde erfolgreich gesendet <strong>Ich werde Ihnen so schnell wie möglich antworten</strong>",
+      "nameError": "Der Name ist immer noch nicht lang genug",
+      "emailError": "Ihre E-Mail ist ungültig",
+      "messageError": "Ihre Nachricht ist immer noch nicht lang genug",
+      "send": "Nachricht senden"
+    }
+  }
+}

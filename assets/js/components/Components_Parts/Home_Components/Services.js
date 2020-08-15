@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {FetchPortfolio} from "../../Api/Api";
-import LanguageContext from "../../Context/LanguageContext";
+import LanguageContext, {common} from "../../Context/LanguageContext";
 import {ApiLanguages} from "./Feedback";
 
 
@@ -20,7 +20,7 @@ class Services extends Component {
         const {language} = this.context;
         const {services} = this.state;
         const servicesElements = services.map((service, key) => (
-            <div className="column has-text-centered">
+            <div key={key} className="column has-text-centered">
                 <h3 className="has-text-black">{service.title[ApiLanguages[language]]}</h3>
                 <p>
                     {service.content[ApiLanguages[language]]}
@@ -29,7 +29,7 @@ class Services extends Component {
         ));
         return (
             <div className="content">
-                <h2 className="title">My Services</h2>
+                <h2 className="title">{common[language].service}</h2>
                 <div className="columns">
                     {servicesElements}
                 </div>

@@ -1,13 +1,15 @@
 import * as React from 'react';
+import LanguageContext,{common}
+    from "../../Context/LanguageContext";
+import {useContext} from "react";
 
 
 export function LeftInfo(props) {
+    const {language} = useContext(LanguageContext);
     return (
         <div className="column is-6 has-text-left">
-            <h1 className="title is-2">Contact Me</h1>
-            <p className="is-size-4">Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Nulla eligendi soluta
-                voluptate facere molestiae consequatur.</p>
+            <h1 className="title is-2">{common[language].contact.title}</h1>
+            <p className="is-size-4">{common[language].contact.sideText}</p>
             <div className="social-media">
                 <a href="https://facebook.com" target="_blank"
                    className="button is-light is-medium">

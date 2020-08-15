@@ -1,11 +1,12 @@
 import * as React from 'react';
-import logo from "../../../../images/logo.jpg.png";
-
+import LanguageContext, {common} from "../../Context/LanguageContext";
+import {useContext} from "react";
 
 export function Languages(props) {
+    const {language} = useContext(LanguageContext);
     return (
         <div id="3" className="content">
-            <h2 className="title">Languages</h2>
+            <h2 className="title">{common[language].language}</h2>
             <div>
                 <div className="columns">
                     <div className="column">

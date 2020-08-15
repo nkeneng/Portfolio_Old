@@ -1,0 +1,46 @@
+{
+  "download":"Telecharger CV",
+  "downloader": {
+    "first": "Telecharger",
+    "second": "CV"
+  },
+  "about": {
+    "title": "A propos de moi",
+    "subtitle": "french subtitle",
+    "text": "French ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur corporis deserunt dolor eaque earum fugit maxime, molestias nesciunt omnis reprehenderit sint tempore. Animi corporis omnis repellat similique tempora tempore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  },
+  "service": "Mes services",
+  "education": {
+    "title": "Education",
+    "elements": {
+      "first": {
+        "year": "2019 - aujourd'hui",
+        "text": "French ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "second": {
+        "year": "2020 - aujourd'hui",
+        "text": "French ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "third": {
+        "year": "2021 - aujourd'hui",
+        "text": "French ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      }
+    }
+  },
+  "language": "Langues",
+  "skill": "Compétences",
+  "contact": {
+    "title": "Contactez-moi",
+    "sideText": "French ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta voluptate facere molestiae consequatur.",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre e-mail",
+      "message": "Expliquez-moi comment je peux vous aider",
+      "success": "Votre message a été envoyé avec succès <strong>Je vous répondrai dès que possible</strong>",
+      "nameError": "Le nom n'est pas  assez long",
+      "emailError": "Votre e-mail est invalide",
+      "messageError": "Votre message n'est pas assez long",
+      "send": "Envoyer message"
+    }
+  }
+}

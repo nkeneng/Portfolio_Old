@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {Component} from "react";
 import {SendData} from "../../Api/Api";
+import LanguageContext, {common}
+    from "../../Context/LanguageContext";
 
 class Form extends Component {
-
+    static contextType = LanguageContext;
     constructor(props) {
         super(props);
         this.state = {
@@ -78,6 +80,7 @@ class Form extends Component {
     };
 
     render() {
+        const {language} = this.context;
         const {name, email, message, status, nameIsValid, emailIsValid, messageIsValid} = this.state;
         let display;
         switch (status) {
@@ -94,7 +97,7 @@ class Form extends Component {
             <div className="column is-6 has-text-left">
                 <div className={"notification " + display}>
                     <button onClick={this.resetAll} className="delete"/>
-                    Your message has been send successfully <strong>I will answer you as soon as possible</strong>
+                    {common[language].contact.form.success}
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
@@ -102,7 +105,7 @@ class Form extends Component {
                             <input required
                                    className={"input is-medium " + (nameIsValid !== undefined ? (!nameIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="text"
-                                   placeholder="Your name"
+                                   placeholder={common[language].contact.form.name}
                                    value={name}
                                    onChange={this.handleNameChange}
                             />
@@ -113,7 +116,7 @@ class Form extends Component {
                             <i className={"fa " + (nameIsValid !== undefined ? (!nameIsValid ? 'fa-exclamation-triangle failure' : 'fa-check checked') : '')}/>
                             </span>
                             <p className={"help " + (!nameIsValid && nameIsValid !== undefined ? '' : 'is-hidden')}>
-                                The name is still not long enough
+                                {common[language].contact.form.nameError}
                             </p>
                         </p>
                     </div>
@@ -122,7 +125,7 @@ class Form extends Component {
                             <input required
                                    className={"input is-medium " + (emailIsValid !== undefined ? (!emailIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="email"
-                                   placeholder="Your email"
+                                   placeholder={common[language].contact.form.email}
                                    value={email}
                                    onChange={this.handleEmailChange}
                             />
@@ -133,7 +136,7 @@ class Form extends Component {
                             <i className={"fa " + (emailIsValid !== undefined ? (!emailIsValid ? 'fa-exclamation-triangle failure' : 'fa-check checked') : '')}/>
                             </span>
                             <p className={"help " + (!emailIsValid && emailIsValid !== undefined ? '' : 'is-hidden')}>
-                                Your email doesn't respect the email convention
+                                {common[language].contact.form.emailError}
                             </p>
                         </p>
                     </div>
@@ -141,19 +144,19 @@ class Form extends Component {
                         <div className="control">
                         <textarea required
                                   className={"textarea is-medium "+(messageIsValid !== undefined ? (!messageIsValid ? 'is-danger' : 'is-success') : '')}
-                                  placeholder="Explain how I can help you"
+                                  placeholder={common[language].contact.form.message}
                                   value={message}
                                   onChange={this.handleMessageChange}
                         />
                         </div>
                         <p className={"help " + (!messageIsValid && messageIsValid !== undefined ? '' : 'is-hidden')}>
-                            Your message is still not long enough
+                            {common[language].contact.form.messageError}
                         </p>
                     </div>
                     <div className="field">
                         <div className="control">
-                            <button disabled={(nameIsValid && emailIsValid && messageIsValid )? '': 'true'} className="button is-medium send">
-                                Send message
+                            <button disabled={(nameIsValid && emailIsValid && messageIsValid )? '': true} className="button is-medium send">
+                                {common[language].contact.form.send}
                             </button>
                         </div>
                     </div>

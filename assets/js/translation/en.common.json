@@ -1,0 +1,46 @@
+{
+  "download": "Download CV",
+  "downloader": {
+    "first": "Download",
+    "second": "CV"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "english subtitle",
+    "text": "English ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur corporis deserunt dolor eaque earum fugit maxime, molestias nesciunt omnis reprehenderit sint tempore. Animi corporis omnis repellat similique tempora tempore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, autem debitis eaque enim error facilis in, iste laboriosam magnam non obcaecati perspiciatis praesentium quidem recusandae repudiandae sequi tempora? Quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  },
+  "service": "My services",
+  "education": {
+    "title": "Education",
+    "elements": {
+      "first": {
+        "year": "2019 - present",
+        "text": "English ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "second": {
+        "year": "2020 - present",
+        "text": "English ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      },
+      "third": {
+        "year": "2021 - present",
+        "text": "English ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eligendi esse expedita incidunt nihil. Aliquid maxime minima natus officia reiciendis."
+      }
+    }
+  },
+  "language": "Languages",
+  "skill": "Skills",
+  "contact": {
+    "title": "Contact me",
+    "sideText": "English ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta voluptate facere molestiae consequatur.",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Explain how I can help you",
+      "success": "Your message has been send successfully <strong>I will answer you as soon as possible</strong>",
+      "nameError": "The name is still not long enough",
+      "emailError": "Your email is invalid",
+      "messageError": "Your message is still not long enough",
+      "send": "Send message"
+    }
+  }
+}

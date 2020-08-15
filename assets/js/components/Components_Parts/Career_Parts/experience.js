@@ -1,14 +1,7 @@
 import React, {Component} from 'react';
-import logo from "../../../../images/logo.jpg.png";
 import {FetchPortfolio} from "../../Api/Api";
-import LanguageContext
+import LanguageContext,{ApiLanguages}
     from "../../Context/LanguageContext";
-
-export const ApiLanguages = {
-    'Francais': 'fr',
-    'English': 'en',
-    'Deutsch': 'de'
-};
 
 class Experience extends Component {
     static contextType = LanguageContext;

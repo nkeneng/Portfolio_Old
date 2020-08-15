@@ -1,0 +1,266 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Erstellungszeit: 12. Aug 2020 um 14:02
+-- Server-Version: 5.7.26
+-- PHP-Version: 7.2.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `portfolio`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio`
+--
+
+CREATE TABLE `steven_portfolio` (
+                                    `id` int(11) NOT NULL,
+                                    `category_id` int(11) NOT NULL,
+                                    `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `involvement` tinyint(1) NOT NULL,
+                                    `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                    `updated_at` datetime NOT NULL,
+                                    `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio`
+--
+
+INSERT INTO `steven_portfolio` (`id`, `category_id`, `title`, `involvement`, `image`, `updated_at`, `url`) VALUES
+(1, 1, 'Webloupe', 1, 'IMG_F1242EDA9D85-1.jpeg', '2020-06-14 13:07:39', 'https://webloupe.de/'),
+(2, 1, 'Fend Market', 1, 'IMG_BC356D95A48F-1.jpeg', '2020-06-14 13:11:01', 'https://kako-home.com/');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_category`
+--
+
+CREATE TABLE `steven_portfolio_category` (
+                                             `id` int(11) NOT NULL,
+                                             `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio_category`
+--
+
+INSERT INTO `steven_portfolio_category` (`id`, `title`) VALUES
+(1, 'Symfony'),
+(2, 'Webloupe'),
+(3, 'Other');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_experience`
+--
+
+CREATE TABLE `steven_portfolio_experience` (
+                                               `id` int(11) NOT NULL,
+                                               `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+                                               `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                               `start_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                               `end_date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                               `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                               `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio_experience`
+--
+
+INSERT INTO `steven_portfolio_experience` (`id`, `content`, `title`, `start_date`, `end_date`, `image`, `updated_at`) VALUES
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed facilisis lectus. Integer justo sem, faucibus sit amet finibus eu, pretium id augue. Morbi mattis, lectus et congue', 'Frontend-developer by Aleksundshantu', '2019', '2020', 'aleksundshantu-logo.svg', '2020-06-14 12:59:06'),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed facilisis lectus. Integer justo sem, faucibus sit amet finibus eu, pretium id augue. Morbi mattis, lectus et congue volutpat, diam massa faucibus mi, sed pretium libero lectus a nunc.', 'Backend-developer by Webloupe', '2020', '2021', 'logo.jpg.png', '2020-06-14 13:00:27');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_feedback`
+--
+
+CREATE TABLE `steven_portfolio_feedback` (
+                                             `id` int(11) NOT NULL,
+                                             `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                             `content` longtext NOT NULL,
+                                             `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                             `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio_feedback`
+--
+
+INSERT INTO `steven_portfolio_feedback` (`id`, `title`, `content`, `image`, `updated_at`) VALUES
+(1, 'Webloupe', '\"{\\\"en\\\":\\\"English ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\",\\\"de\\\":\\\"German ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\",\\\"fr\\\":\\\"French ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\"}\"', 'logo.jpg.png', '2020-06-10 22:54:57'),
+(2, 'Aleksundshantu', '\"{\\\"en\\\":\\\"Englsih ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae leo id massa suscipit sodales. In hac habitasse platea dictumst. Pellentesque sit amet facilisis nisl. Vestibulum\\\",\\\"de\\\":\\\"German ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae leo id massa suscipit sodales. In hac habitasse platea dictumst. Pellentesque sit amet facilisis nisl. Vestibulum\\\",\\\"fr\\\":\\\"French ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae leo id massa suscipit sodales. In hac habitasse platea dictumst. Pellentesque sit amet facilisis nisl. Vestibulum \\\"}\"', 'aleksundshantu-logo.svg', '2020-06-14 21:56:01');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_messages`
+--
+
+CREATE TABLE `steven_portfolio_messages` (
+                                             `id` int(11) NOT NULL,
+                                             `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                             `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                             `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+                                             `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_service`
+--
+
+CREATE TABLE `steven_portfolio_service` (
+                                            `id` int(11) NOT NULL,
+                                            `title` longtext NOT NULL,
+                                            `content` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio_service`
+--
+
+INSERT INTO `steven_portfolio_service` (`id`, `title`, `content`) VALUES
+(4, '\"{\\\"en\\\":\\\"Plugin Development\\\",\\\"de\\\":\\\"Plugin Erstellung\\\",\\\"fr\\\":\\\"Development de plugin\\\"}\"', '\"{\\\"en\\\":\\\"English ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\",\\\"de\\\":\\\"German ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\",\\\"fr\\\":\\\"French ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus. \\\"}\"'),
+(5, '\"{\\\"en\\\":\\\"Web development \\\",\\\"de\\\":\\\"Web Entwicklung \\\",\\\"fr\\\":\\\"Development web  \\\"}\"', '\"{\\\"en\\\":\\\"English ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus.  \\\",\\\"de\\\":\\\"german ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus.  \\\",\\\"fr\\\":\\\"French ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ullamcorper augue. Sed suscipit dolor tempus, rutrum justo vitae, dictum ipsum. Vestibulum hendrerit sapien ac elit malesuada pellentesque. Aenean condimentum ultrices maximus.  \\\"}\"');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `steven_portfolio_user`
+--
+
+CREATE TABLE `steven_portfolio_user` (
+                                         `id` int(11) NOT NULL,
+                                         `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `roles` longtext NOT NULL,
+                                         `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                                         `api_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `steven_portfolio_user`
+--
+
+INSERT INTO `steven_portfolio_user` (`id`, `email`, `roles`, `password`, `api_token`) VALUES
+(3, 'nkeneng.junior@gmail.com', '[\"ROLE_API_ACCESS\"]', '$2y$13$5l8WIi8/i/xUamnXsbAo4OMyI.qo75P5Oselw0sVwDX9Us5brkJjC', 'uLW7gAlhSEfA96Ki45F1xUY51H6VpEzHP9excUGG4g4DgaieTVbaUQgO5fpHQDhlBvRlBTqMp0xN9m2HF4lWI0VT41e2xVvVGPZk1cfjGSHRvAZw6gGbY3eLBJtzAYo0baXzvqRUHw4DRllUe873CORg1cHSoRztwOHKXkjegL4zSTJLcoqwb8FdzP8J2HkZRhSJh05t'),
+(8, 'admin.junior@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$BIdVPl69.L5yBt7A/8YdTO3PPNMZAzKIQd.ARffpJ3FHOuv4pj37C', 'GcYdGiatXn2HlPlKWr5yk8PUUPQcU4hHioATiouOjc84OlHtIIZ9a3fpCdG1Q29T7NZ1x1dCRMtrtpKp0bUtvCIl4gRilw9llnoPAWq1yKs1T8hC4X5XAYjgy3gmg4m4QApuTbu7HqnQ');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `steven_portfolio`
+--
+ALTER TABLE `steven_portfolio`
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `IDX_31F2CE4312469DE2` (`category_id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_category`
+--
+ALTER TABLE `steven_portfolio_category`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_experience`
+--
+ALTER TABLE `steven_portfolio_experience`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_feedback`
+--
+ALTER TABLE `steven_portfolio_feedback`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_messages`
+--
+ALTER TABLE `steven_portfolio_messages`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_service`
+--
+ALTER TABLE `steven_portfolio_service`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `steven_portfolio_user`
+--
+ALTER TABLE `steven_portfolio_user`
+    ADD PRIMARY KEY (`id`),
+    ADD UNIQUE KEY `UNIQ_296ABDF2E7927C74` (`email`),
+    ADD UNIQUE KEY `UNIQ_296ABDF27BA2F5EB` (`api_token`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio`
+--
+ALTER TABLE `steven_portfolio`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_category`
+--
+ALTER TABLE `steven_portfolio_category`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_experience`
+--
+ALTER TABLE `steven_portfolio_experience`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_feedback`
+--
+ALTER TABLE `steven_portfolio_feedback`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_messages`
+--
+ALTER TABLE `steven_portfolio_messages`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_service`
+--
+ALTER TABLE `steven_portfolio_service`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT für Tabelle `steven_portfolio_user`
+--
+ALTER TABLE `steven_portfolio_user`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `steven_portfolio`
+--
+ALTER TABLE `steven_portfolio`
+    ADD CONSTRAINT `FK_31F2CE4312469DE2` FOREIGN KEY (`category_id`) REFERENCES `steven_portfolio_category` (`id`);
