@@ -37,7 +37,7 @@ class Feedback extends Component {
     render() {
         const {language} = this.context;
         const {feedback} = this.state;
-        const feedBackElements = feedback.map((feedback, key) => (
+        const feedBackElements = feedback ? feedback.map((feedback, key) => (
             <div key={key} className={"m-auto feedback swiper-slide "}>
                 <p className="has-text-centered">
                     {feedback.content[ApiLanguages[language]]}
@@ -45,7 +45,7 @@ class Feedback extends Component {
                 <p className={"has-text-black has-text-centered"}>{feedback.title}</p>
                 <img className="is-block m-auto" src={'../images/' + feedback.image} alt=""/>
             </div>
-        ));
+        )): null;
         return (
             <div className="content">
                 <h2 className="title">Feedback</h2>
