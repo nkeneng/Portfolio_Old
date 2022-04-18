@@ -9,9 +9,11 @@ class Career extends Component {
     render() {
         return (
             <div className="page is-12 column mt-4">
-                <Experience/>
+                <div className={"columns is- is-hidden-desktop  my-6"}>
+                </div>
+                {/*<Experience/>*/}
                 <Education/>
-                <Languages/>
+                {/*<Languages/>*/}
                 <Skills/>
             </div>
         )

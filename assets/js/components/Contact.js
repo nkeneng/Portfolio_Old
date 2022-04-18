@@ -11,6 +11,8 @@ class Contact extends Component {
             <div className="column page is-full">
                 <section className="hero">
                     <div className="container has-text-centered">
+                        <div className={"columns is- is-hidden-desktop  my-6"}>
+                        </div>
                         <div className="columns is-8 is-variable ">
                             <LeftInfo  />
                             <Form />

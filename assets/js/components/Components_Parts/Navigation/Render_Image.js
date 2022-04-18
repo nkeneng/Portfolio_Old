@@ -13,36 +13,18 @@ import ThemeContext from "../../Context/ThemeContext";
 
 export function RenderImage({id, isMobile}) {
 
-    const {theme} = useContext(ThemeContext);
-
     switch (id) {
         case 1: {
-            if (isMobile) return <img className="is-block m-auto" src={nav_icon_1_light} alt=""/>
-            else return (
-                <img key={id} id={'icon' + id} src={theme ? nav_icon_1_dark : nav_icon_1_light}
-                     alt=""/>
-            );
+            return <i className="fa fa-user"></i>
         }
         case 2: {
-            if (isMobile) return <img className="is-block m-auto" src={nav_icon_2_light} alt=""/>
-            else return (
-                <img key={id} id={'icon' + id} src={theme ? nav_icon_2_dark : nav_icon_2_light}
-                     alt=""/>
-            );
+            return <i className="fa fa-user"></i>
         }
         case 3: {
-            if (isMobile) return <img className="is-block m-auto" src={nav_icon_3_light} alt=""/>
-            else return (
-                <img key={id} id={'icon' + id} src={theme ? nav_icon_3_dark : nav_icon_3_light}
-                     alt=""/>
-            );
+            return <i className="fa fa-user"></i>
         }
         case 4: {
-            if (isMobile) return <img className="is-block m-auto" src={nav_icon_4_light} alt=""/>
-            else return (
-                <img key={id} id={'icon' + id} src={theme ? nav_icon_4_dark : nav_icon_4_light}
-                     alt=""/>
-            );
+            return <i className="fa fa-user"></i>
         }
     }
 }

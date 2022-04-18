@@ -1,13 +1,20 @@
 body.dark-mode {
   --swiper-theme-color:#FED700;
-  --body-background-color: linear-gradient(#212026, #212026, #212026);
+  --body-background-color: linear-gradient(180deg, #3F3E42 0%, rgba(33, 32, 38, 0) 100%);
   --header-background: url("../Images/header-background-dark.jpg");
-  --profil-image: url("../images/profil-black.jpg");
-  --container1-body-background: #2B2B33;
+  --profil-image: url("../images/profil-black.png");
+  --container1-body-background: #43434A;
   --second-color: #FED700;
   --black-text: #fff;
   --submit-text: #000;
-  --side-background-color: #27282A;
+  --side-background-color: #494D57;
+  --active-background: #A4A3A0;
+  --profile-background: #212026;
+  --profile-border: #646464;
+  --mobile-nav-item-background: #494D57;
+  --active-mobile-nav-background: #A4A3A0;
+  --icon-color: #FED700;
+  --background-body: linear-gradient(180deg, #3F3E42 0%, rgba(33, 32, 38, 0) 100%) no-repeat center;
 
   .title.blue {
     color: var(--second-color) !important;
@@ -49,7 +56,7 @@ body.dark-mode {
   .column.profil-image {
     .circle {
       background: {
-        image: url("../images/profil-black.jpg") !important;
+        image: url("../images/profil-black.png") !important;
       }
     }
   }
@@ -63,7 +70,7 @@ body.dark-mode {
           background-size: cover !important;
           background-repeat: no-repeat !important;
           @media screen and (max-width: 767px) {
-            background-image: url("../Images/profil-black.jpg") !important;
+            background-image: url("../Images/profil-black.png") !important;
             background-position: center !important;
             background-size: cover !important;
             background-repeat: no-repeat !important;
@@ -73,6 +80,6 @@ body.dark-mode {
     }
   }
   .navbar.is-fixed-top {
-    background-color: #FED700 !important;
+    background-color: #212529 !important;
   }
 }

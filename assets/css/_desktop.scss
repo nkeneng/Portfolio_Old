@@ -1,5 +1,7 @@
 @include desktop {
   body {
+    background: var(--background-body);
+    background-size: cover;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
@@ -37,17 +39,18 @@
       height: auto;
       width: 100%;
       overflow: hidden;
-      padding: 0!important;
+      padding: 0 !important;
       border-radius: var(--page-edges-border-radius) var(--page-edges-border-radius) 0 0;
+
       .Header {
         background: url("../Images/header-background.jpg") no-repeat center;
-        filter: blur(8px);
-        -webkit-filter: blur(8px);
+        filter: blur(4px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         background-size: cover;
         width: 100%;
         height: 100%;
       }
-      .themeSwitch{
+
+      .themeSwitch {
         top: 1px;
         right: 1px;
         position: absolute;
@@ -73,13 +76,13 @@
   .right-navbar {
     background-color: var(--side-background-color);
     z-index: 2;
-    border-radius: 25px 25px 25px 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 15px 15px 0px;
     height: 60vh;
     width: 97px;
     position: absolute;
     right: 0;
     bottom: 0;
-    margin-bottom: -33px;
     margin-right: -78px;
 
     .columns.menu-right {
@@ -204,8 +207,8 @@
 
   .page-content {
     width: 100%;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    //filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 0px 0px 15px 15px;
     position: relative;
   }
 
@@ -245,24 +248,25 @@
     transition: all 1500ms ease-in-out;
   }
 
+
   .swiper-container {
-    width: 75%;
+    width: 100%;
     height: 190px;
+  }
+  .skills{
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      .swiper-button-next,.swiper-button-prev{
+        z-index: 1000;
+      }
+    }
   }
 
   .is-hidden-mobile {
     display: block !important;
   }
 
-  .circular--landscape {
-    display: inline-block;
-    position: relative;
-    margin-left: 22px;
-    width: 200px !important;
-    height: 200px !important;
-    overflow: hidden;
-    border-radius: 50%;
-  }
 
   .circular--landscape img {
     width: auto;

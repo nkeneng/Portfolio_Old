@@ -36,7 +36,7 @@
       "name": "Your name",
       "email": "Your email",
       "message": "Explain how I can help you",
-      "success": "Your message has been send successfully <strong>I will answer you as soon as possible</strong>",
+      "success": "Your message has been send successfully I will answer you as soon as possible",
       "nameError": "The name is still not long enough",
       "emailError": "Your email is invalid",
       "messageError": "Your message is still not long enough",

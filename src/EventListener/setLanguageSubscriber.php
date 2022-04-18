@@ -6,8 +6,8 @@ use App\Entity\Experience;
 use App\Entity\FeedBack;
 use App\Entity\Services;
 use Doctrine\ORM\EntityManagerInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
-use PhpParser\Node\Expr\Cast\Object_;
+use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
+use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -46,34 +46,24 @@ class setLanguageSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            EasyAdminEvents::PRE_PERSIST => 'onPrePersist',
-            EasyAdminEvents::PRE_UPDATE => 'onPrePersist',
+            BeforeEntityPersistedEvent::class => 'onPrePersist',
+            BeforeEntityUpdatedEvent::class => 'onPreUpdate',
         ];
     }
 
-    public function onPrePersist(GenericEvent $event)
+
+    public function onPrePersist(BeforeEntityPersistedEvent $event)
     {
-        $entity = $event->getSubject();
-        if (($entity instanceof FeedBack)) {
-            $content = [];
-            foreach ($this->languages as $language) {
-                $index = $language . '_feedback_content';
-                $content[$language] = $this->requestStack->getCurrentRequest()->request->get($index);
-            }
-            $json_content = json_encode($content);
-            $entity->setContent($json_content);
-            $entity->setUpdatedAt(new \DateTime());
-        }
-        else if (($entity instanceof Services)){
-            $this->setTranslationText('_services',$entity);
-        }
-        else if (($entity instanceof Experience)){
-            $this->setTranslationText('_experience',$entity);
-        }
-        else return ;
+        $this->callAction($event);
     }
 
-    public function setTranslationText(string $type,Object $entity)
+    public function onPreUpdate(BeforeEntityUpdatedEvent $event)
+    {
+        $this->callAction($event);
+    }
+
+
+    public function setTranslationText(string $type, object $entity)
     {
         $content = [];
         $title = [];
@@ -87,5 +77,27 @@ class setLanguageSubscriber implements EventSubscriberInterface
         $json_title = json_encode($title);
         $entity->setContent($json_content);
         $entity->setTitle($json_title);
+    }
+
+    /**
+     * @return void
+     */
+    private function callAction($event): void
+    {
+        $entity = $event->getEntityInstance();
+        if (($entity instanceof FeedBack)) {
+            $content = [];
+            foreach ($this->languages as $language) {
+                $index = $language . '_feedback_content';
+                $content[$language] = $this->requestStack->getCurrentRequest()->request->get($index);
+            }
+            $json_content = json_encode($content);
+            $entity->setContent($json_content);
+            $entity->setUpdatedAt(new \DateTime());
+        } else if (($entity instanceof Services)) {
+            $this->setTranslationText('_services', $entity);
+        } else if (($entity instanceof Experience)) {
+            $this->setTranslationText('_experience', $entity);
+        } else return;
     }
 }

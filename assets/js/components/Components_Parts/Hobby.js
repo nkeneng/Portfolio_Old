@@ -30,8 +30,7 @@ export function Hobby({lang}) {
             <div className="columns is-mobile hobby is-multiline">
                 <div className="column is-6-mobile ">
                     <p className="has-text-centered">Gaming</p>
-                    <img src={theme ? hobby_1_dark : hobby_1_light} id="hobby-1" className="is-block m-auto"
-                         alt=""/>
+                    <i className="fa fa-popcorn"></i>
                 </div>
                 <div className="column is-6-mobile ">
                     <p className="has-text-centered">Movies</p>

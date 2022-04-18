@@ -1,0 +1,39 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title 'Bienvenue sur l\'administration de Steven' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block page_content %}
+    <style>
+        p {
+            max-width: 600px;
+        }
+
+        td {
+            font-size: 20px;
+        }
+
+        .title {
+            line-height: 50px !important;
+        }
+    </style>
+
+    <p>Espace reserve aux administrateurs de cette
+        plateforme</p>
+
+    <div class="row">
+
+    </div>
+
+    <br><br><br><br>
+    <p>
+        Conception: <a
+                href="https://www.webloupe.de"
+                target="_blank"> Steven
+            Nkeneng</a>
+    </p>
+
+{% endblock %}

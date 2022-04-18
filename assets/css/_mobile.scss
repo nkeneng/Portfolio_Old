@@ -3,12 +3,12 @@
     width: 100% !important;
   }
   body {
-    font-family: 'DM Serif Text', serif !important;
     height: 100vh;
     width: 100vw;
+    background-color: var(--container1-body-background) !important;
 
     p {
-      font-size: 18px !important;
+      font-size: 16px !important;
     }
 
     #root {
@@ -32,7 +32,7 @@
             background-repeat: no-repeat;
             flex-grow: 2;
             @media (prefers-color-scheme: dark) {
-              background-image: url("../images/profil-black.jpg") !important;
+              background-image: url("../images/profil-black.png") !important;
             }
 
             .header-content {
@@ -161,9 +161,56 @@
   }
 
   .swiper-container {
-    width: 100% !important;
-    height: 300px !important;
+    width: 100% ;
+    height: 300px ;
   }
+
+  .skills{
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      .swiper-button-next,.swiper-button-prev{
+        z-index: 1000;
+      }
+    }
+  }
+
+
+  .fade-exit > .page {
+    z-index: 0.5;
+  }
+
+  .fade-enter > .page {
+    z-index: 1;
+  }
+
+  .fade-enter.left > .page {
+    opacity: 1;
+    transform: translateY(100%)
+  }
+  .fade-exit.left > .page {
+    opacity: 0.5;
+    transform: translateY(0%)
+  }
+  .fade-enter.right > .page {
+    opacity: 1;
+    transform: translateY(100%)
+  }
+  .fade-exit.right > .page {
+    opacity: 0.5;
+    transform: translateY(0%)
+  }
+
+  .fade-enter.fade-enter-active > .page {
+    transform: translateY(0);
+    transition: all 1200ms ease-in-out;
+  }
+
+  .fade-exit.fade-exit-active > .page {
+    transform: translateY(100%);
+    transition: all 1500ms ease-in-out;
+  }
+
 }
 
 @include mobile {

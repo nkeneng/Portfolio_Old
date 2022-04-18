@@ -13,11 +13,11 @@ export const PortfolioItem = ({portfolio}) => {
                         <span
                             className="info">{portfolio.involvement ? 'Total' : 'Partial'}</span><br/>
                         <span>
-                            <a href={portfolio.url}>
+                            {/*<a href={portfolio.url}>*/}
                                 <button className="is-primary button send">
                                 To the Website
                             </button>
-                            </a>
+                            {/*</a>*/}
                         </span>
                     </div>
                 </a>

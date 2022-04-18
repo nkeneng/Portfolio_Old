@@ -36,7 +36,7 @@
       "name": "Votre nom",
       "email": "Votre e-mail",
       "message": "Expliquez-moi comment je peux vous aider",
-      "success": "Votre message a été envoyé avec succès <strong>Je vous répondrai dès que possible</strong>",
+      "success": "Votre message a été envoyé avec succès Je vous répondrai dès que possible",
       "nameError": "Le nom n'est pas  assez long",
       "emailError": "Votre e-mail est invalide",
       "messageError": "Votre message n'est pas assez long",

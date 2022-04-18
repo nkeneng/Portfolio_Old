@@ -1,21 +1,27 @@
 @import '~bulma';
 @import '~font-awesome';
 
-:root {
-  --swiper-theme-color: #1877F2;
-  --body-background-color: linear-gradient(#ABCDEF, #ffff, #fff, #ABCDEF);
-  --black-text: black;
-  --submit-text: #fff;
-  --second-color: #1877F2;
-  --header-background: url("../Images/header-background.jpg");
-  --container1-body-background: #DDDDDD;
-  --side-background-color: #fff;
-  --page-edges-border-radius: 25px;
-  --profil-image: url("../Images/photo-profil.jpg");
+body, button, input, optgroup, select, textarea {
+  font-family: "Open Sans", sans-serif;
+  line-height: 35px;
 }
 
-body {
+p, span {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
   * {
     &::selection {
       background-color: #ABCDEF;
@@ -134,7 +140,7 @@ select {
 }
 
 i {
-  color: var(--second-color) !important;
+  color: var(--icon-color) !important;
 }
 
 @media screen and (max-width: 1023px) {
@@ -143,14 +149,31 @@ i {
   }
 }
 
+.column.icons {
+  margin: 4.4px;
+
+  .fa {
+    font-size: 1.7rem;
+  }
+
+  p {
+    line-height: 30px;
+  }
+}
+
 .active {
   p {
     color: var(--second-color);
   }
+
+  .column {
+    background: var(--active-background);
+    border-radius: 114px;
+  }
 }
 
 .active-mobile {
-  background-color: white;
+  background-color: var(--active-mobile-nav-background) !important;
 
   span {
     color: #3273dc !important;;
@@ -225,4 +248,25 @@ i {
 
 .gray:hover {
   filter: grayscale(60%);
+}
+
+.mobile-navitem {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--mobile-nav-item-background);
+  text-align: center;
+}
+
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  margin-left: 22px;
+  width: 200px !important;
+  height: 200px !important;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid var(--profile-border);
+  background: var(--profile-background);
 }

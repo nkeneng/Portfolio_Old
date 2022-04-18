@@ -10,10 +10,12 @@ export default function NavLinks({dest, active, id}) {
     const {language} = useContext(LanguageContext);
     const destination = '/' + dest.toLowerCase();
     return (
-        <NavLink activeClassName='active' exact to={destination}>
-            <div className="column">
+        <NavLink
+            className={(navData) => (navData.isActive ? "active" : '')}
+            exact="true" to={destination}>
+            <div className="column icons">
                 <RenderImage id={id} isMobile={false}/>
-                <p>{NavLabels[id-1][language]}</p>
+                <p>{NavLabels[id - 1][language]}</p>
             </div>
         </NavLink>
     );

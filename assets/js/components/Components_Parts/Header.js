@@ -1,7 +1,5 @@
-import light_profil
-    from '../../../images/photo-profil.jpg'
 import dark_profil
-    from '../../../images/profil-black.jpg'
+    from '../../../images/profil-black.png'
 import facebook_image
     from '../../../images/social-icons/icons8-facebook-48.png'
 import git_image
@@ -14,8 +12,9 @@ import xing_image
     from '../../../images/social-icons/icons8-xing-48.png'
 import ThemeSwitcher from "./Theme_Switcher";
 import React, {Component} from 'react';
-import LanguageContext,{common}
+import LanguageContext, {common}
     from './../Context/LanguageContext';
+import NameProfession from "./NameProfession";
 
 class Header extends Component {
     static contextType = LanguageContext;
@@ -24,20 +23,17 @@ class Header extends Component {
         super(props);
     }
 
-
     render() {
         const {theme} = this.props.theme
         const {language} = this.context
         return (
-            <div
-                className="column is-12-touch blur">
+            <div className="column is-hidden-touch blur">
                 <div className=" Header">
                 </div>
                 <div className="themeSwitch">
                     <ThemeSwitcher/>
                 </div>
-                <div
-                    className="columns header-content is-absolute-bottom is-multiline ">
+                <div className="columns header-content is-absolute-bottom is-multiline ">
                     <div
                         className="column  social-network  is-two-fifths  is-full-mobile is-relative">
                         <div
@@ -81,29 +77,15 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="column profil-image is-hidden-touch is-hidden-tablet-only  is-one-fifth no-padding ">
-                        <div
-                            className="circular--landscape">
+                    <div className="column profil-image is-hidden-touch is-hidden-tablet-only  is-one-fifth no-padding ">
+                        <div className="circular--landscape">
                             <img
-                                src={theme ? dark_profil : light_profil}/>
+                                src={dark_profil}/>
                         </div>
                     </div>
                     <div
                         className="column my-info-column is-absolute-centered-mobile is-one-fifth-tablet  is-two-fifths is-full-mobile">
-                        <div
-                            className="my-info has-text-centered">
-                            <div
-                                className="author-name ">
-                                <h3 className="title is-2">Steven
-                                    Nkeneng</h3>
-                            </div>
-                            <div
-                                className="profession mt-4 ">
-                                <h4 id="change"
-                                    className="title blue"></h4>
-                            </div>
-                        </div>
+                        <NameProfession/>
                         <div
                             className="button mt-14 download-mobile send  is-mobile-only is-medium">{common[language].download}
                         </div>

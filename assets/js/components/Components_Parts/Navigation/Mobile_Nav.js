@@ -8,9 +8,11 @@ import NavLinksMobile from "./NavLinks_Mobile";
 
 class MobileNav extends Component {
     static contextType = ThemeContext;
+
     constructor(props) {
         super(props);
     }
+
     render() {
         const {theme, setTheme} = this.context;
         switchTheme(theme);
@@ -29,20 +31,23 @@ class MobileNav extends Component {
                         <div className=" is-mobile-only is-hidden header-nav">
                             <nav className="navbar is-fixed-top nav " role="navigation"
                                  aria-label="main navigation">
-                                <div className="navbar-menu is-active ">
+                                <div className="navbar-menu is-active columns mb-0 justify-content-around  ">
                                     {NavElements}
-                                    <a onClick={setTheme}
-                                       className="has-text-centered navbar-item">
-                                        <div><i className={themeClass+' nav-icons'}/></div>
-                                        <span className="black-mobile">Theme</span>
-                                    </a>
-                                       <a className="has-text-centered navbar-item">
-                                           <div><i className="fa fa-globe nav-icons"/></div>
-                                           <div className="select is-small">
-                                               <select value={language}
-                                                       onChange={(e) => setLanguage(e.target.options[e.target.selectedIndex].getAttribute('data-key'))}>{fields}</select>
-                                           </div>
-                                       </a>
+                                    {/*<div className={"column is-2"}>*/}
+                                    {/*    <a onClick={setTheme} className="has-text-centered navbar-item">*/}
+                                    {/*        <div><i className={themeClass + ' nav-icons'}/></div>*/}
+                                    {/*        <span className="black-mobile">Theme</span>*/}
+                                    {/*    </a>*/}
+                                    {/*</div>*/}
+                                    {/*<div className={"column is-2"}>*/}
+                                    {/*    <a className="has-text-centered navbar-item">*/}
+                                    {/*        <div><i className="fa fa-globe nav-icons"/></div>*/}
+                                    {/*        <div className="select is-small">*/}
+                                    {/*            <select value={language}*/}
+                                    {/*                    onChange={(e) => setLanguage(e.target.options[e.target.selectedIndex].getAttribute('data-key'))}>{fields}</select>*/}
+                                    {/*        </div>*/}
+                                    {/*    </a>*/}
+                                    {/*</div>*/}
                                 </div>
                             </nav>
                         </div>

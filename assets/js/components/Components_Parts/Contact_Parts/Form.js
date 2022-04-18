@@ -47,12 +47,12 @@ class Form extends Component {
 
     OnFailure(r) {
         //@TODO optional : capture errors
-        console.log(r.json());
+        // console.log(r.json());
         this.setState({status: r.status})
     }
 
     OnSuccessful() {
-        console.log('ok');
+        // console.log('ok');
         this.setState({
             name: '',
             email: '',
@@ -97,11 +97,13 @@ class Form extends Component {
             <div className="column is-6 has-text-left">
                 <div className={"notification " + display}>
                     <button onClick={this.resetAll} className="delete"/>
-                    {common[language].contact.form.success}
+                   <p>
+                       {common[language].contact.form.success}
+                   </p>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <p className="control is-expanded has-icons-left has-icons-right">
+                        <div className="control is-expanded has-icons-left has-icons-right">
                             <input required
                                    className={"input is-medium " + (nameIsValid !== undefined ? (!nameIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="text"
@@ -118,10 +120,10 @@ class Form extends Component {
                             <p className={"help " + (!nameIsValid && nameIsValid !== undefined ? '' : 'is-hidden')}>
                                 {common[language].contact.form.nameError}
                             </p>
-                        </p>
+                        </div>
                     </div>
                     <div className="field">
-                        <p className="control is-expanded has-icons-left has-icons-right">
+                        <div className="control is-expanded has-icons-left has-icons-right">
                             <input required
                                    className={"input is-medium " + (emailIsValid !== undefined ? (!emailIsValid ? 'is-danger' : 'is-success') : '')}
                                    type="email"
@@ -138,7 +140,7 @@ class Form extends Component {
                             <p className={"help " + (!emailIsValid && emailIsValid !== undefined ? '' : 'is-hidden')}>
                                 {common[language].contact.form.emailError}
                             </p>
-                        </p>
+                        </div>
                     </div>
                     <div className="field">
                         <div className="control">

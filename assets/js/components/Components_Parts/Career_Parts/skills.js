@@ -12,41 +12,84 @@ import * as React from 'react';
 import LanguageContext, {common} from "../../Context/LanguageContext";
 import {useContext} from "react";
 
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export function Skills(props) {
     const {language} = useContext(LanguageContext);
     return (
         <div id="3" className="content">
             <h2 className="title">{common[language].skill}</h2>
             <div className="skills">
-                <div className="columns is-mobile">
-                    <div className="column  is-3-mobile">
-                        <img src={symfony}/>
-                    </div>
-                    <div className="column is-3-mobile">
-                        <img src={html}/></div>
-                    <div className="column is-3-mobile">
-                        <img src={bootstrap}/>
-                    </div>
-                    <div className="column is-3-mobile">
-                        <img src={javascript}/>
-                    </div>
-                    <div className="column is-3-mobile">
-                        <img src={wordpress}/>
-                    </div>
-                    <div className="column  is-3-mobile">
-                        <img src={mysql}/>
-                    </div>
-                    <div className="column is-3-mobile">
-                        <img src={php}/>
-                    </div>
-                    <div className="column  is-3-mobile">
-                        <img src={css}/>
-                    </div>
-                    <div className="column  is-3-mobile">
-                        <img src={bulma_image}/>
-                    </div>
-                    <div className="column  is-3-mobile">
-                        <img src={react_image}/>
+                <div className="swiper-container">
+                    <div className="swiper-wrapper">
+                        <Swiper
+                            modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+                            spaceBetween={2}
+                            slidesPerView={6}
+                            loop={true}
+                            autoplay={{ delay: 1000 }}
+                            pagination={{clickable: true}}
+                        >
+                            <SwiperSlide>
+                                <div className="">
+                                    <img src={symfony}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div>
+                                    <img src={html}/>
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div>
+                                    <img src={bootstrap}/>
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div>
+                                    <img src={javascript}/>
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div>
+                                    <img src={wordpress}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="">
+                                    <img src={mysql}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div>
+                                    <img src={php}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="">
+                                    <img src={css}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="">
+                                    <img src={bulma_image}/>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="">
+                                    <img src={react_image}/>
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
                     </div>
                 </div>
             </div>
