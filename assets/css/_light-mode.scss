@@ -4,11 +4,11 @@ body.light-mode {
   --black-text: black;
   --submit-text: #fff;
   --second-color: #1877F2;
-  --header-background: url("../Images/header-background.jpg");
+  --header-background: url("../images/header-background.jpg");
   --container1-body-background: #F5F5F7;
   --side-background-color: rgba(244, 238, 239, 0.99);
   --page-edges-border-radius: 25px;
-  --profil-image: url("../Images/photo-profil.jpg");
+  --profil-image: url("../images/photo-profil.jpg");
   --active-background: #DBEAFF;
   --active-mobile-nav-background: #DBEAFF;
   --profile-background: #DBEAFF;
@@ -61,7 +61,7 @@ body.light-mode {
   .column.profil-image {
     .circle {
       background: {
-        image: url("../Images/photo-profil.jpg") !important;
+        image: url("../images/photo-profil.jpg") !important;
       }
     }
   }
@@ -70,12 +70,12 @@ body.light-mode {
     .Container {
       .container-1 {
         .Header {
-          background-image: url("../Images/header-background.jpg") !important;
+          background-image: url("../images/header-background.jpg") !important;
           background-position: center !important;
           background-size: cover !important;
           background-repeat: no-repeat !important;
           @media screen and (max-width: 767px) {
-            background-image: url("../Images/photo-profil.jpg") !important;
+            background-image: url("../images/photo-profil.jpg") !important;
             background-position: center !important;
             background-size: cover !important;
             background-repeat: no-repeat !important;

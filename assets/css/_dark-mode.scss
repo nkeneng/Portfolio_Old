@@ -1,7 +1,7 @@
 body.dark-mode {
   --swiper-theme-color:#FED700;
   --body-background-color: linear-gradient(180deg, #3F3E42 0%, rgba(33, 32, 38, 0) 100%);
-  --header-background: url("../Images/header-background-dark.jpg");
+  --header-background: url("../images/header-background-dark.jpg");
   --profil-image: url("../images/profil-black.png");
   --container1-body-background: #43434A;
   --second-color: #FED700;
@@ -65,12 +65,12 @@ body.dark-mode {
     .Container {
       .container-1 {
         .Header {
-          background-image: url("../Images/header-background-dark.jpg") !important;
+          background-image: url("../images/header-background-dark.jpg") !important;
           background-position: center !important;
           background-size: cover !important;
           background-repeat: no-repeat !important;
           @media screen and (max-width: 767px) {
-            background-image: url("../Images/profil-black.png") !important;
+            background-image: url("../images/profil-black.png") !important;
             background-position: center !important;
             background-size: cover !important;
             background-repeat: no-repeat !important;
